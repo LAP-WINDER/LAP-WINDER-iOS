@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--My page-->
         <scene sceneID="y1i-7k-rqZ">
             <objects>
                 <viewController storyboardIdentifier="ID-ProfileVC" id="0Zb-b7-Me9" customClass="ProfileVC" customModule="Prototype_01" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,7 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="1oc-UM-IBR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.rectangle" catalog="system" id="fYd-lT-oFf"/>
+                    <tabBarItem key="tabBarItem" title="My page" image="person.crop.rectangle" catalog="system" id="fYd-lT-oFf"/>
                     <connections>
                         <outlet property="emailLabel" destination="3jf-sm-ekk" id="MAy-zf-1Ul"/>
                         <outlet property="passwordLabel" destination="hXd-Ay-Pn6" id="0OZ-jA-h5v"/>

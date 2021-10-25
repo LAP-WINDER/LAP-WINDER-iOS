@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Prototype_01
+//  Prototype-Login
 //
-//  Created by 이동규 on 2021/10/11.
+//  Created by 이동규 on 2021/10/26.
 //
 
 import UIKit
@@ -11,7 +11,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-    var userToken: String = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

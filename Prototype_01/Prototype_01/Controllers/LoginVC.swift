@@ -18,15 +18,21 @@ class LoginVC: UIViewController {
             return
         }
         if let email = self.emailTextField.text, let pwd = self.passwordTextField.text {
-            if email == "test1@test.com" && pwd == "password" {
+//            if email == "test1@test.com" && pwd == "password" {
                 // webservice().isValidUser(User(email: email, password: pwd))
-                profileVC.paramEmail = email
-                profileVC.paramPassword = pwd
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                // 알람
-                print("Something wrong.")
-            }
+            webservice().isValidUser(User(email: email, password: pwd), completion: { str in
+                if str != nil {
+                    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                    appDelegate?.userToken = str!
+                    profileVC.paramEmail = email
+                    profileVC.paramPassword = pwd
+                    print("hello", profileVC.paramEmail, profileVC.paramPassword)
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    // 알람
+                    print("Something wrong.")
+                }
+            })
         }
     }
     
