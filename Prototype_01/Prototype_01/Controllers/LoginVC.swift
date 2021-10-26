@@ -14,22 +14,22 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func didTapLoginButton(_ sender: Any) {
-        guard let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-ProfileVC") as? ProfileVC else {
+        guard let preVC = self.presentingViewController as? MainTBC else {
+            return
+        }
+        guard let profileVC = preVC.viewControllers?[3] as? ProfileVC else {
             return
         }
         if let email = self.emailTextField.text, let pwd = self.passwordTextField.text {
-//            if email == "test1@test.com" && pwd == "password" {
-                // webservice().isValidUser(User(email: email, password: pwd))
             webservice().isValidUser(User(email: email, password: pwd), completion: { str in
                 if str != nil {
                     let appDelegate = UIApplication.shared.delegate as? AppDelegate
                     appDelegate?.userToken = str!
                     profileVC.paramEmail = email
                     profileVC.paramPassword = pwd
-                    print("hello", profileVC.paramEmail, profileVC.paramPassword)
                     self.dismiss(animated: true, completion: nil)
                 } else {
-                    // 알람
+                    // 알람으로 바꾸기
                     print("Something wrong.")
                 }
             })

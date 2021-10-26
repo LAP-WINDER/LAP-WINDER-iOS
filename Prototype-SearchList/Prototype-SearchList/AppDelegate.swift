@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Prototype_HomeVC
+//  Prototype-SearchList
 //
-//  Created by 이동규 on 2021/10/24.
+//  Created by 이동규 on 2021/10/26.
 //
 
 import UIKit
@@ -14,23 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        /*
-        if #available(iOS 13.0, *) {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.backgroundColor = UIColor(displayP3Red: 125 / 255, green: 125 / 255, blue: 125 / 255, alpha: 0.4)
-            UINavigationBar.appearance().prefersLargeTitles = true
-            UINavigationBar.appearance().standardAppearance = navBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        } else {
-            UINavigationBar.appearance().barTintColor = UIColor(displayP3Red: 125 / 255, green: 125 / 255, blue: 125 / 255, alpha: 0.4)
-            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        }
-        */
         return true
     }
 

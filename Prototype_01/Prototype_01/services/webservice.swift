@@ -24,7 +24,6 @@ class webservice {
                 let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
                 if let jsonKeyData = jsonData?["token"] as? String {
                     DispatchQueue.main.async {
-                        print("herererer \(jsonKeyData)")
                         completion(jsonKeyData)
                     }
                 } else {

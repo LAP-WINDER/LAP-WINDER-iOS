@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="99o-VY-k58">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="Gxb-W4-4rl">
+            <objects>
+                <viewController storyboardIdentifier="ID-TestVC" id="Osk-ca-4GW" customClass="TestVC" customModule="Prototype_SearchList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6tL-VW-QAb">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SBF-fB-G4K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="9u9-GY-fak"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ro1-qy-me6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="471"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="EUf-Tb-qrL">
+            <objects>
+                <tabBarController id="99o-VY-k58" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v7Q-Fj-56d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZhK-LS-dmD" kind="relationship" relationship="viewControllers" id="APf-T5-0IJ"/>
+                        <segue destination="Osk-ca-4GW" kind="relationship" relationship="viewControllers" id="10p-sD-plO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u1m-WZ-alN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="76"/>
+        </scene>
+        <!--Search for-->
+        <scene sceneID="xrU-Af-ca7">
+            <objects>
+                <tableViewController storyboardIdentifier="ID-SearchWineTC" id="Owx-e4-4qR" customClass="SearchWineTC" customModule="Prototype_SearchList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pVS-yL-VDK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ID-SearchWineCell" editingAccessoryType="disclosureIndicator" textLabel="msF-Tj-sjZ" detailTextLabel="nW9-xS-I0y" rowHeight="72" style="IBUITableViewCellStyleSubtitle" id="z4f-eW-jvc" customClass="SearchWineCell" customModule="Prototype_SearchList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z4f-eW-jvc" id="Maa-mW-7K8">
+                                    <rect key="frame" x="0.0" y="0.0" width="360.33333333333331" height="72"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="msF-Tj-sjZ">
+                                            <rect key="frame" x="19.999999999999996" y="12.999999999999998" width="43.666666666666664" height="26.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nW9-xS-I0y">
+                                            <rect key="frame" x="20.000000000000004" y="41.333333333333329" width="37.333333333333336" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="wineCountryLabel" destination="nW9-xS-I0y" id="HMw-wl-g5C"/>
+                                    <outlet property="wineNameLabel" destination="msF-Tj-sjZ" id="wvw-iO-xwE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Owx-e4-4qR" id="7U0-Kz-rsp"/>
+                            <outlet property="delegate" destination="Owx-e4-4qR" id="lWn-Y4-qYn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search for" id="ksu-a8-MdC"/>
+                    <connections>
+                        <segue destination="K0n-4l-Rqm" kind="show" identifier="ID-Manual-SearchTC-DetailVC" id="v79-5h-hwk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YgC-ma-GC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1281.5384615384614" y="-188.38862559241704"/>
+        </scene>
+        <!--Wine-->
+        <scene sceneID="PHF-2E-q65">
+            <objects>
+                <viewController storyboardIdentifier="ID-DetailWineInfoVC" id="K0n-4l-Rqm" customClass="DetailWineInfoVC" customModule="Prototype_SearchList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mAb-D7-1Yz">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rqm-wD-riq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wine" id="0De-TG-ojT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKL-DQ-j4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023" y="-188"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="iVb-4K-pGU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZhK-LS-dmD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cRf-ur-OgD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CZg-Ms-NhL">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Owx-e4-4qR" kind="relationship" relationship="rootViewController" id="9pL-1u-g2S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0r-Zc-crl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556.92307692307691" y="-188.38862559241704"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

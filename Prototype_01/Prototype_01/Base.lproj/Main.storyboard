@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O99-aL-Bkn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O99-aL-Bkn">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,22 +68,6 @@
             </objects>
             <point key="canvasLocation" x="-172.30769230769229" y="-203.31753554502367"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="XXM-Oj-V5i">
-            <objects>
-                <viewController id="ien-mC-dJ7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9Th-fi-lra">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="aMM-EE-vcl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Search" id="Snx-pA-tEc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F2m-Bf-d4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="557" y="615"/>
-        </scene>
         <!--Home-->
         <scene sceneID="Bh4-Eg-LMX">
             <objects>
@@ -100,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="557" y="-889"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--MainTBC-->
         <scene sceneID="dFQ-NA-RJh">
             <objects>
-                <tabBarController id="O99-aL-Bkn" sceneMemberID="viewController">
+                <tabBarController id="O99-aL-Bkn" customClass="MainTBC" customModule="Prototype_01" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BOm-lv-V0J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -362,12 +346,80 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ien-mC-dJ7" kind="relationship" relationship="rootViewController" id="uqA-Sv-C9h"/>
+                        <segue destination="c1d-vD-I8Z" kind="relationship" relationship="rootViewController" id="g80-gW-qRh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64V-nf-XWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-172.30769230769229" y="614.92890995260666"/>
+        </scene>
+        <!--🍷 Search for-->
+        <scene sceneID="Zk0-mY-1l2">
+            <objects>
+                <tableViewController storyboardIdentifier="ID-SearchWineTC" id="c1d-vD-I8Z" customClass="SearchWineTC" customModule="Prototype_01" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lGo-Ro-AAL">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ID-SearchWineCell" textLabel="KPl-8F-Bt1" detailTextLabel="k0J-DP-8Tg" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="PeK-7q-SLT" customClass="SearchWineCell" customModule="Prototype_01" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PeK-7q-SLT" id="m5g-vE-ddV">
+                                    <rect key="frame" x="0.0" y="0.0" width="360.33333333333331" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KPl-8F-Bt1">
+                                            <rect key="frame" x="20" y="11" width="40" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k0J-DP-8Tg">
+                                            <rect key="frame" x="19.999999999999996" y="35" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="wineCountryLabel" destination="k0J-DP-8Tg" id="i3c-iJ-5HN"/>
+                                    <outlet property="wineNameLabel" destination="KPl-8F-Bt1" id="SVo-yR-X9f"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="c1d-vD-I8Z" id="PBw-by-ORX"/>
+                            <outlet property="delegate" destination="c1d-vD-I8Z" id="NpN-1t-BUg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="🍷 Search for" id="Toz-yl-PGT"/>
+                    <connections>
+                        <segue destination="yuw-en-Ixw" kind="show" identifier="ID-Manual-SearchTC-DetailVC" id="Ngi-0g-U1B"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sU-xy-Fzj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553.84615384615381" y="614.92890995260666"/>
+        </scene>
+        <!--Detail Wine InfoVC-->
+        <scene sceneID="gM1-K9-Vbr">
+            <objects>
+                <viewController storyboardIdentifier="ID-DetailWineInfoVC" id="yuw-en-Ixw" customClass="DetailWineInfoVC" customModule="Prototype_01" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c44-sR-2ES">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Fml-ct-5Dv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="soq-BI-UU5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lL9-6N-sZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314" y="615"/>
         </scene>
         <!--Camera-->
         <scene sceneID="RLP-UR-OvU">

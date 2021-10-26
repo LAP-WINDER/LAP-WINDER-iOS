@@ -32,7 +32,6 @@ class ProfileVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("heeerer, \(self.paramEmail)\(self.paramPassword)")
         if let email = self.paramEmail {
             self.emailLabel?.text = email
             print("heerer 1, \(email)")
