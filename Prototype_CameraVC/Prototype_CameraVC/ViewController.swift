@@ -27,10 +27,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     @IBAction func didTapCaptureImage(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            flagImageSave = true
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = false
+            self.flagImageSave = true
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = .camera
+            self.imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
         } else {
             print("NO")

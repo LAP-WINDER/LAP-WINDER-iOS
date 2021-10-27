@@ -13,6 +13,8 @@
 		2372777D2725512D0080A5A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2372777B2725512D0080A5A2 /* Main.storyboard */; };
 		2372777F2725512F0080A5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2372777E2725512F0080A5A2 /* Assets.xcassets */; };
 		237277822725512F0080A5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237277802725512F0080A5A2 /* LaunchScreen.storyboard */; };
+		23FB8EBF27284D45004FA1B9 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FB8EBE27284D45004FA1B9 /* ReaderView.swift */; };
+		23FB8EC5272973CC004FA1B9 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FB8EC4272973CC004FA1B9 /* ScannerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2372777E2725512F0080A5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		237277812725512F0080A5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		237277832725512F0080A5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23FB8EBE27284D45004FA1B9 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		23FB8EC4272973CC004FA1B9 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				2372777E2725512F0080A5A2 /* Assets.xcassets */,
 				237277802725512F0080A5A2 /* LaunchScreen.storyboard */,
 				237277832725512F0080A5A2 /* Info.plist */,
+				23FB8EBE27284D45004FA1B9 /* ReaderView.swift */,
+				23FB8EC4272973CC004FA1B9 /* ScannerVC.swift */,
 			);
 			path = Prototype_CameraVC;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FB8EC5272973CC004FA1B9 /* ScannerVC.swift in Sources */,
 				2372777A2725512D0080A5A2 /* ViewController.swift in Sources */,
+				23FB8EBF27284D45004FA1B9 /* ReaderView.swift in Sources */,
 				237277762725512D0080A5A2 /* AppDelegate.swift in Sources */,
 				237277782725512D0080A5A2 /* SceneDelegate.swift in Sources */,
 			);
