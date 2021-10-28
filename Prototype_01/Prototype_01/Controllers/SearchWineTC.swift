@@ -40,6 +40,9 @@ class SearchWineTC: UITableViewController {
         //디테일 세팅
         self.searchController.searchBar.placeholder = "Seach wine from list"
         self.searchController.searchResultsUpdater = self // 중요. 사용자가 검색한 값에 따라 업데이트
+        self.searchController.searchBar.scopeButtonTitles = ["종류", "맛", "국가", "품종", "가격"]
+        self.searchController.searchBar.showsScopeBar = true
+        self.searchController.navigationItem.hidesSearchBarWhenScrolling = false
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.searchBarStyle = .prominent
         self.searchController.searchBar.sizeToFit()
