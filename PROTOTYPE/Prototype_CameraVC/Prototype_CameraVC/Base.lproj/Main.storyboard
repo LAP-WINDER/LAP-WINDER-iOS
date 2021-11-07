@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="qAv-YA-Tbc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Camera Scanner" id="bLn-GU-4Bi">
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768.79999999999995" y="83.497536945812811"/>
+            <point key="canvasLocation" x="768.80000000000007" y="83.497536945812811"/>
         </scene>
         <!--ScannerVC-->
         <scene sceneID="aqV-iE-jfK">
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="tI3-gy-4nP"/>
+                        <viewLayoutGuide key="safeArea" id="oFH-aU-uk3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZOH-aV-VXB"/>
@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bt-ok-sGQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1536.8" y="82.758620689655174"/>
+            <point key="canvasLocation" x="1536.8000000000002" y="82.758620689655174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5mU-Zu-S4C">
