@@ -15,6 +15,8 @@
 		236781B927325A5A0068E9A4 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236781B827325A5A0068E9A4 /* CameraVC.swift */; };
 		236781BD27325C570068E9A4 /* MLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236781BC27325C570068E9A4 /* MLService.swift */; };
 		236781C22732928B0068E9A4 /* CapturedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236781C12732928B0068E9A4 /* CapturedImageModel.swift */; };
+		2398EFE327383AF200E827E1 /* CustomCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398EFE227383AF200E827E1 /* CustomCameraVC.swift */; };
+		23C3C0AE2738D00500EA0D86 /* CapturedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3C0AD2738D00500EA0D86 /* CapturedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		236781B827325A5A0068E9A4 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		236781BC27325C570068E9A4 /* MLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLService.swift; sourceTree = "<group>"; };
 		236781C12732928B0068E9A4 /* CapturedImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedImageModel.swift; sourceTree = "<group>"; };
+		2398EFE227383AF200E827E1 /* CustomCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraVC.swift; sourceTree = "<group>"; };
+		23C3C0AD2738D00500EA0D86 /* CapturedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				236781B827325A5A0068E9A4 /* CameraVC.swift */,
+				2398EFE227383AF200E827E1 /* CustomCameraVC.swift */,
+				23C3C0AD2738D00500EA0D86 /* CapturedVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,10 +190,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2398EFE327383AF200E827E1 /* CustomCameraVC.swift in Sources */,
 				236781BD27325C570068E9A4 /* MLService.swift in Sources */,
 				236781A2273255BD0068E9A4 /* AppDelegate.swift in Sources */,
 				236781B927325A5A0068E9A4 /* CameraVC.swift in Sources */,
 				236781C22732928B0068E9A4 /* CapturedImageModel.swift in Sources */,
+				23C3C0AE2738D00500EA0D86 /* CapturedVC.swift in Sources */,
 				236781A4273255BD0068E9A4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

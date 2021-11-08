@@ -1,0 +1,6 @@
+framework module Pods_Prototype_APILogin {
+  umbrella header "Pods-Prototype-APILogin-umbrella.h"
+
+  export *
+  module * { export * }
+}

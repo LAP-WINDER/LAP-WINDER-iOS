@@ -41,13 +41,13 @@ extension CameraVC: UIImagePickerControllerDelegate & UINavigationControllerDele
     // 카메라 세팅
     func openCamera() {
         self.imagePicker.sourceType = .camera   // 컨트롤러 기능 중 카메라 기능 사용
-        self.modalPresentationStyle = .fullScreen
+//        self.modalPresentationStyle = .fullScreen
         self.imagePicker.allowsEditing = false  // 편집 허용 x
         self.imagePicker.cameraDevice = .rear   // 후면 카메라
         self.imagePicker.cameraCaptureMode = .photo
         self.imagePicker.cameraFlashMode = .auto
-        self.imagePicker.showsCameraControls = true
-//        addOverlay()
+//        self.imagePicker.showsCameraControls = true
+        addOverlay()
         
         
         self.present(self.imagePicker, animated: true, completion: nil)
@@ -56,14 +56,18 @@ extension CameraVC: UIImagePickerControllerDelegate & UINavigationControllerDele
     
     func addOverlay() {
         let overlayView = UIView()
-        overlayView.backgroundColor = .systemRed
-        overlayView.alpha = 0.6
+        overlayView.backgroundColor = .none
+        overlayView.layer.borderWidth = 1
+        overlayView.layer.borderColor = UIColor.black.cgColor
+        self.imagePicker.view.subviews[0].alpha = 0.6 
         
         //수정, (self.imagePicker.cameraOverlayView?.layer.position)!
 //        let testxy = CGPoint(x: (self.imagePicker.view.layer.sublayers![0].frame.width / 3), y: 0)
-        let testxy = CGPoint(x: 0, y: 121)
-        overlayView.frame = CGRect(origin: testxy,
-                                   size: CGSize(width: self.imagePicker.view.layer.sublayers![0].frame.width, height: (self.imagePicker.view.layer.sublayers![0].frame.width / 3) * 4)
+        let origin = CGPoint(x: (self.imagePicker.view.layer.sublayers![0].frame.width / 6) * 2, y: 0)
+        overlayView.frame = CGRect(origin: origin,
+                                   size: CGSize(
+                                    width: (self.imagePicker.view.layer.sublayers![0].frame.width / 6) * 2,
+                                    height: (self.imagePicker.view.layer.sublayers![0].frame.height))
         )
 //        overlayView.frame = self.imagePicker.view.layer.sublayers![0].frame
 //        print((self.imagePicker.cameraOverlayView?.frame)!, (self.imagePicker.cameraOverlayView?.layer.position)!)
