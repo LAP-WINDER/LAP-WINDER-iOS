@@ -31,7 +31,7 @@ class NaverVC: UIViewController {
     }
     
     func setUpInitialView() {
-        //델리게이트로 지정
+        //델리게이트로  지정
         self.naverLoginInstance?.delegate = self
     }
     
