@@ -240,16 +240,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP1-EC-8TL">
-                                <rect key="frame" x="158" y="663" width="60" height="31"/>
+                                <rect key="frame" x="149" y="663" width="60" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="naver"/>
+                                <connections>
+                                    <action selector="didTapNaverLoginBtn:" destination="86M-Xz-iz7" eventType="touchUpInside" id="suy-iX-Y1W"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du2-u8-Fhs">
-                                <rect key="frame" x="53" y="663" width="67" height="31"/>
+                                <rect key="frame" x="114" y="702" width="137" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="check kakao user"/>
                                 <connections>
                                     <action selector="checkUserInfoBtn:" destination="86M-Xz-iz7" eventType="touchUpInside" id="kod-iZ-bYD"/>
                                 </connections>

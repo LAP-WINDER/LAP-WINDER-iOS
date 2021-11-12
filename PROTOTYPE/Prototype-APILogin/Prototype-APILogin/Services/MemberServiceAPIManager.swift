@@ -16,9 +16,10 @@ class MemberServiceAPIManager {
         "validEmail" : "https://winder.info/api/v1/members/email",
         "enroll" : "https://winder.info/api/v1/members",
         "userInfo" : "https://winder.info/api/v1/members",
-        "pushKakaoToken": "https://winder.info/api/v1/members/sns",
+        "pushKakaoToken": "https://winder.info/api/v1/members/oauth/kakao",
+        "pushNaverToken": "https://076377ce-e57e-4e02-9010-348b5c4be96d.mock.pstmn.io/api/v1/members/oauth/naver",
     ]
-    
+
     // 로그인
     func isValidUser(_ user: User, completion: @escaping (String?, Error?)->()) {
         var request = URLRequest(url: URL(string: self.urlCollections["login"]!)!)
@@ -129,7 +130,31 @@ class MemberServiceAPIManager {
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
-                print("Push kakako token and returned data \(data)")
+                print("Push Kakako token and returned data \(data)")
+                
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+                print(jsonData)
+
+                print("response is: \(response)")
+            }
+        }.resume()
+    }
+    
+    // 서버에 네이버 토큰 전달
+    func pushTokenFromNaverLogin(_ info: TokenInfo) {
+        var request = URLRequest(url: URL(string: self.urlCollections["pushNaverToken"]!)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONEncoder().encode(info)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                print("Push Naver token and returned data \(data)")
+                
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+                print(jsonData)
+
                 print("response is: \(response)")
             }
         }.resume()

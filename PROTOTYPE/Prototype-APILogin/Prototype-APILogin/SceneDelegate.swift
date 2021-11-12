@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    // MARK: 카카오 연동에 필요한 사용자 인증 함수 추가 (iOS13 이상)
+    // MARK: 카카오,네이버 연동에 필요한 사용자 인증 함수 추가 (iOS13 이상)
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
