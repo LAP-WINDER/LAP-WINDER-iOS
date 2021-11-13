@@ -19,6 +19,17 @@ class NewsContentsView: UIView {
     func setUpStackView(completion: @escaping (UIImageView) -> ()) {
         self.stackView.spacing = 10
         
+        var contentsPaths = [String]()
+        
+        HomepageAPIManager().requestContentsInfo(HomeContentInfo(label: .news, page: 3)) { nsdict, error in
+            if let error = error {
+                print(#function, error.localizedDescription)
+            } else if let nsdict = nsdict {
+                print(nsdict)
+            }
+        }
+        
+        
         for i in 0..<contentsPath.count {
             let uiImageview = UIImageView()
             uiImageview.image = UIImage(named: self.contentsPath[i])

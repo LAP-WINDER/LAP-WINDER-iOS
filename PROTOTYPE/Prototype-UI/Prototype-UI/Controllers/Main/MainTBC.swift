@@ -6,13 +6,15 @@
 //
 //Color pink RGB: (251,163,216)
 //Color purple RGB: (93,76,201)
+// 5. rgb(126, 54, 254)
 import Foundation
 import UIKit
 
 @IBDesignable class TabBarWithCorners: UITabBar {
-    @IBInspectable var color: UIColor?
-    @IBInspectable var radii: CGFloat = 18.0
     
+    @IBInspectable var color: UIColor?
+    @IBInspectable var radii: CGFloat = 18.0    //18.0
+
     private var shapeLayer: CALayer?
 
     override func draw(_ rect: CGRect) {
@@ -21,15 +23,14 @@ import UIKit
     }
     
     private func setTabbarItemColor() {
-        self.tintColor = .white
+        self.tintColor = UIColor(displayP3Red: 126/255, green: 54/255, blue: 254/255, alpha: 1.0)
     }
 
     private func addShape() {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = createPath()
         shapeLayer.strokeColor = UIColor.gray.withAlphaComponent(0.1).cgColor
-        //shapeLayer.fillColor = color?.cgColor ?? UIColor.white.cgColor
-        shapeLayer.fillColor = CGColor(srgbRed: 1/255, green: 4/255, blue: 48/255, alpha: 1.0)
+        shapeLayer.fillColor = color?.cgColor ?? UIColor.white.cgColor
         shapeLayer.lineWidth = 0.5
         shapeLayer.shadowColor = UIColor.black.cgColor
         shapeLayer.shadowOffset = CGSize(width: 0, height: -3)
@@ -50,7 +51,7 @@ import UIKit
             cornerRadii: CGSize(width: radii, height: 0.0))
         return path.cgPath
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.isTranslucent = true

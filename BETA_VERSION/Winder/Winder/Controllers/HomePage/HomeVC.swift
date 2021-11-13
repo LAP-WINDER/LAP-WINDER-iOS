@@ -17,17 +17,21 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recomendedContentsView.setUpContentsView()
-        newsContentsView.setUpStackView { imageView in
-            self.addGestureToUIView(imageView)
-        }
-        blogContentsView.setUpStackView { imageView in
-            self.addGestureToUIView(imageView)
-        }
-        infoStackView.setUpStackView { imageView in
-            self.addGestureToUIView(imageView)
-        }
+        self.setUpAllViews()
         self.setupNavBarSettings()
+    }
+    
+    func setUpAllViews() {
+        self.recomendedContentsView.setUpContentsView()
+        self.newsContentsView.setUpStackView { imageView in
+            self.addGestureToUIView(imageView)
+        }
+        self.blogContentsView.setUpStackView { imageView in
+            self.addGestureToUIView(imageView)
+        }
+        self.infoStackView.setUpStackView { imageView in
+            self.addGestureToUIView(imageView)
+        }
     }
     
     func setupNavBarSettings() {
@@ -42,4 +46,6 @@ class HomeVC: UIViewController {
     @objc func handleTap(sender: UITapGestureRecognizer) {
         self.performSegue(withIdentifier: "ID-manual-HomeVC-HomeInfoVC", sender: self)
     }
+    
+    //+
 }

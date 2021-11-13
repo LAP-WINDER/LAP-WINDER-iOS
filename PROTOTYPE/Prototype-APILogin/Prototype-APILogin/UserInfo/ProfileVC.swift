@@ -4,7 +4,7 @@
 //
 //  Created by 이동규 on 2021/11/09.
 //
-
+//rgb(126, 54, 254)
 import Foundation
 import UIKit
 
@@ -23,7 +23,7 @@ class ProfileVC: UIViewController {
     }
     
     func setUpProfileView() {
-        self.profileView.backgroundColor = UIColor(displayP3Red: 37/255, green: 47/255, blue: 122/255, alpha: 1.0)
+        self.profileView.backgroundColor = UIColor(displayP3Red: 126/255, green: 54/255, blue: 254255, alpha: 1.0)
         self.profileView.layer.cornerRadius = 25
         self.profileImage.layer.cornerRadius = self.profileImage.frame.height / 2
     }

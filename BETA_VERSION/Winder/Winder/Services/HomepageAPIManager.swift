@@ -9,8 +9,9 @@ import Foundation
 
 // 홈페이지 뷰의 서버 리퀘스트 관련 뷰모델 정리
 class HomepageAPIManager {
-    let URLCollections = [
-        "homepageContents" : ""
+    
+    private let URLCollections = [
+        "homepageContents" : "https://winder.info/api/v1/post"
     ]
 
     func requestContentsInfo(_ info: HomeContentInfo, completion: @escaping (NSDictionary?, Error?)->()) {
@@ -25,10 +26,12 @@ class HomepageAPIManager {
             } else if let data = data {
                 print("data: \(data)")
                 let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
-                if let jsonObjData = jsonData?["data"] as? NSDictionary {
-                    print("jsonObjData: \(jsonObjData)")
+                if let jsonObjData = jsonData?["data"] as? NSArray {
+                    print("jsonObjData: \(jsonObjData), type: \(type(of: jsonObjData)), type1: \(type(of: jsonObjData[0])), count: \(jsonObjData.count)")
+                    print("response: \(response)")
                     DispatchQueue.main.async {
-                        completion(jsonObjData, nil)
+                        completion(nil, nil)
+//                        completion(jsonObjData, nil)
                     }
                 } else {
                     //print("response: \(response)")

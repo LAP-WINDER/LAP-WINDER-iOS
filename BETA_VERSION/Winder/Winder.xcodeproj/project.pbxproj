@@ -21,6 +21,10 @@
 		231E6C4C273E80C60055B5A6 /* InfoContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C4B273E80C60055B5A6 /* InfoContentsView.swift */; };
 		231E6C4E273E84850055B5A6 /* HomeInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C4D273E84850055B5A6 /* HomeInfoVC.swift */; };
 		231E6C50273E999D0055B5A6 /* HomeContentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C4F273E999D0055B5A6 /* HomeContentInfo.swift */; };
+		231E6C52273EB0650055B5A6 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C51273EB0650055B5A6 /* CameraVC.swift */; };
+		231E6C55273EB08F0055B5A6 /* CameraVC+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C54273EB08F0055B5A6 /* CameraVC+Extention.swift */; };
+		231E6C57273EB2D10055B5A6 /* CapturedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C56273EB2D10055B5A6 /* CapturedImageModel.swift */; };
+		231E6C59273EB2FE0055B5A6 /* MLServiceAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C58273EB2FE0055B5A6 /* MLServiceAPIManager.swift */; };
 		D9AC48C1739E558B9DE5AAD8 /* Pods_Winder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138D03CB23C7AA8099CC199B /* Pods_Winder.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +46,10 @@
 		231E6C4B273E80C60055B5A6 /* InfoContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoContentsView.swift; sourceTree = "<group>"; };
 		231E6C4D273E84850055B5A6 /* HomeInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoVC.swift; sourceTree = "<group>"; };
 		231E6C4F273E999D0055B5A6 /* HomeContentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentInfo.swift; sourceTree = "<group>"; };
+		231E6C51273EB0650055B5A6 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		231E6C54273EB08F0055B5A6 /* CameraVC+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraVC+Extention.swift"; sourceTree = "<group>"; };
+		231E6C56273EB2D10055B5A6 /* CapturedImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedImageModel.swift; sourceTree = "<group>"; };
+		231E6C58273EB2FE0055B5A6 /* MLServiceAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLServiceAPIManager.swift; sourceTree = "<group>"; };
 		64DC26B84AC4075E8F4B82C7 /* Pods-Winder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.release.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.release.xcconfig"; sourceTree = "<group>"; };
 		7B911A8B39ED7EB33B640F05 /* Pods-Winder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.debug.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +87,7 @@
 		231E6C1D273E55790055B5A6 /* Winder */ = {
 			isa = PBXGroup;
 			children = (
+				231E6C53273EB0790055B5A6 /* Extensions */,
 				231E6C44273E7AB70055B5A6 /* CustomViews */,
 				231E6C36273E55CB0055B5A6 /* Storyboards */,
 				231E6C35273E55C40055B5A6 /* Models */,
@@ -117,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				231E6C42273E66130055B5A6 /* HomepageAPIManager.swift */,
+				231E6C58273EB2FE0055B5A6 /* MLServiceAPIManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -125,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				231E6C4F273E999D0055B5A6 /* HomeContentInfo.swift */,
+				231E6C56273EB2D10055B5A6 /* CapturedImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +160,7 @@
 		231E6C3C273E574D0055B5A6 /* CameraPage */ = {
 			isa = PBXGroup;
 			children = (
+				231E6C51273EB0650055B5A6 /* CameraVC.swift */,
 			);
 			path = CameraPage;
 			sourceTree = "<group>";
@@ -184,6 +196,14 @@
 				231E6C4B273E80C60055B5A6 /* InfoContentsView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		231E6C53273EB0790055B5A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				231E6C54273EB08F0055B5A6 /* CameraVC+Extention.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C9CF3B57850ADC8E9B352039 /* Pods */ = {
@@ -319,12 +339,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				231E6C46273E7AF70055B5A6 /* RecomendedContentsView.swift in Sources */,
+				231E6C57273EB2D10055B5A6 /* CapturedImageModel.swift in Sources */,
 				231E6C4C273E80C60055B5A6 /* InfoContentsView.swift in Sources */,
+				231E6C55273EB08F0055B5A6 /* CameraVC+Extention.swift in Sources */,
 				231E6C48273E800B0055B5A6 /* NewsContentsView.swift in Sources */,
 				231E6C50273E999D0055B5A6 /* HomeContentInfo.swift in Sources */,
 				231E6C1F273E55790055B5A6 /* AppDelegate.swift in Sources */,
 				231E6C3A273E57100055B5A6 /* HomeVC.swift in Sources */,
 				231E6C21273E55790055B5A6 /* SceneDelegate.swift in Sources */,
+				231E6C52273EB0650055B5A6 /* CameraVC.swift in Sources */,
+				231E6C59273EB2FE0055B5A6 /* MLServiceAPIManager.swift in Sources */,
 				231E6C38273E56EA0055B5A6 /* MainTBC.swift in Sources */,
 				231E6C43273E66130055B5A6 /* HomepageAPIManager.swift in Sources */,
 				231E6C4A273E80A60055B5A6 /* BlogContentsView.swift in Sources */,

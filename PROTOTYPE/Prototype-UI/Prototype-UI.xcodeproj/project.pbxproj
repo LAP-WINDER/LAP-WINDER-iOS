@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2307286C273F5B7300933197 /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2307286B273F5B7300933197 /* ProfileTVC.swift */; };
 		23C3C12E273A7B2600EA0D86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3C12D273A7B2600EA0D86 /* AppDelegate.swift */; };
 		23C3C130273A7B2600EA0D86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3C12F273A7B2600EA0D86 /* SceneDelegate.swift */; };
 		23C3C135273A7B2700EA0D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C3C133273A7B2700EA0D86 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2307286B273F5B7300933197 /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		23C3C12A273A7B2600EA0D86 /* Prototype-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prototype-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C3C12D273A7B2600EA0D86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23C3C12F273A7B2600EA0D86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2307286D273F5BCC00933197 /* Page3 */ = {
+			isa = PBXGroup;
+			children = (
+				2307286B273F5B7300933197 /* ProfileTVC.swift */,
+			);
+			path = Page3;
+			sourceTree = "<group>";
+		};
 		23C3C121273A7B2600EA0D86 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		23C3C143273A7C0A00EA0D86 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2307286D273F5BCC00933197 /* Page3 */,
 				23C3C148273A7DC600EA0D86 /* Main */,
 				23C3C144273A7C1300EA0D86 /* Page1 */,
 				23C3C145273A7C2100EA0D86 /* Page2 */,
@@ -199,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23C3C12E273A7B2600EA0D86 /* AppDelegate.swift in Sources */,
+				2307286C273F5B7300933197 /* ProfileTVC.swift in Sources */,
 				23C3C150273AA9D900EA0D86 /* SignUpVC.swift in Sources */,
 				23C3C14C273A97A800EA0D86 /* ProfileVC.swift in Sources */,
 				23C3C147273A7D5100EA0D86 /* FirstVC.swift in Sources */,

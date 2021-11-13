@@ -12,6 +12,7 @@
 // UIColor(displayP3Red: 240/255, green: 243/255, blue: 244/255, alpha: 0.4)
 // 4. 진한 남색 포인트 컬러
 // UIColor(displayP3Red: 1/255, green: 4/255, blue: 48/255, alpha: 0.8)
+// 5. rgb(126, 54, 254)
 
 import Foundation
 import UIKit

@@ -9,21 +9,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--📷Camera-->
         <scene sceneID="4Ac-dY-noQ">
             <objects>
-                <viewController id="HZb-sC-t7o" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ID-CameraVC" id="HZb-sC-t7o" customClass="CameraVC" customModule="Winder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6xH-y9-HJy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKJ-hp-HQJ">
+                                <rect key="frame" x="0.0" y="164" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oy-7B-ckC">
+                                <rect key="frame" x="202" y="632" width="140" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="와인 사진 전송하기"/>
+                                <connections>
+                                    <action selector="didTapPushBtn:" destination="HZb-sC-t7o" eventType="touchUpInside" id="gy6-ZX-Qdw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfI-fD-xQn">
+                                <rect key="frame" x="31" y="632" width="140" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="와인 사진 찍기"/>
+                                <connections>
+                                    <action selector="didTapCaptureBtn:" destination="HZb-sC-t7o" eventType="touchUpInside" id="VFq-X6-l3H"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dlb-X7-VAk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="52j-CV-u0E"/>
+                    <navigationItem key="navigationItem" title="📷Camera" id="4sa-EM-nml"/>
+                    <connections>
+                        <outlet property="CameraImageView" destination="sKJ-hp-HQJ" id="21S-XF-mf8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZq-Vo-mlr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="381"/>
+            <point key="canvasLocation" x="1140" y="380.54187192118229"/>
         </scene>
         <!--🍷Winder-->
         <scene sceneID="XdC-M2-wU5">
@@ -239,9 +270,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="🍷Winder" id="92M-va-vce"/>
                     <connections>
-                        <outlet property="NewsContentsView" destination="ZYk-9b-uIc" id="6US-M5-bVK"/>
                         <outlet property="blogContentsView" destination="WlP-fb-SrG" id="koW-wI-54N"/>
                         <outlet property="infoStackView" destination="g8g-xp-fW4" id="aao-I4-8ZR"/>
+                        <outlet property="newsContentsView" destination="ZYk-9b-uIc" id="iZX-ou-ypp"/>
                         <outlet property="recomendedContentsView" destination="k72-bN-56u" id="Miy-Md-odE"/>
                         <segue destination="B89-XH-X2F" kind="show" identifier="ID-manual-HomeVC-HomeInfoVC" id="xt4-TL-ntA"/>
                     </connections>
@@ -259,7 +290,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="세부정보 보여주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shq-Ey-Fff">
-                                <rect key="frame" x="166" y="396" width="122" height="21"/>
+                                <rect key="frame" x="126" y="396" width="122" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -279,14 +310,14 @@
         <scene sceneID="pOJ-gq-WHy">
             <objects>
                 <tabBarController storyboardIdentifier="ID-MainTBC" id="tSl-Ao-gFo" customClass="MainTBC" customModule="Winder" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KKN-8r-4QM">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KKN-8r-4QM" customClass="TabBarWithCorners" customModule="Winder" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="KOy-Z6-GFz" kind="relationship" relationship="viewControllers" id="2Lb-oo-ZMS"/>
-                        <segue destination="HZb-sC-t7o" kind="relationship" relationship="viewControllers" id="e3q-H9-K1E"/>
+                        <segue destination="L6s-kS-kbu" kind="relationship" relationship="viewControllers" id="e3q-H9-K1E"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WqK-ZL-jMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -312,9 +343,37 @@
             </objects>
             <point key="canvasLocation" x="379.71014492753625" y="-301.33928571428572"/>
         </scene>
+        <!--Camera-->
+        <scene sceneID="Oat-aY-fvj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L6s-kS-kbu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera.viewfinder" catalog="system" id="52j-CV-u0E"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vBG-Pp-XEn">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HZb-sC-t7o" kind="relationship" relationship="rootViewController" id="7UG-G9-JKc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRM-NR-h5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="380.54187192118229"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="KKN-8r-4QM">
+            <size key="intrinsicContentSize" width="-1" height="83"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

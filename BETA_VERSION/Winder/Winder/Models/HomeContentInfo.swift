@@ -7,7 +7,14 @@
 
 import Foundation
 
+enum ContentsCase {
+    case news
+    case recommend
+    case blog
+    case info
+}
+
 struct HomeContentInfo {
-    var label: String       //컨텐츠 라벨링(recommend, news, blog, info)
-    var page: Int           // 컨텐츠 페이지
+    var label: ContentsCase     //컨텐츠 라벨링(recommend, news, blog, info)
+    var page: Int               // 컨텐츠 페이지
 }
