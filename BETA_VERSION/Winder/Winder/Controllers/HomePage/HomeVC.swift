@@ -10,10 +10,26 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    @IBOutlet weak var recomendedContentsView: RecomendedContentsView!
+    @IBOutlet weak var recomendedContentsView: RecomendedContentsView! {
+        didSet {
+            print(#function, "is called.")
+            self.paramRecoContentAccessID =  recomendedContentsView.contentsImageView.image?.accessibilityValue
+        }
+    }
+    
     @IBOutlet weak var newsContentsView: NewsContentsView!
     @IBOutlet weak var blogContentsView: BlogContentsView!
     @IBOutlet weak var infoStackView: InfoContentsView!
+    
+    var paramContentID: String = ""
+    var paramContentURL: String?
+    var paramRecoContentAccessID: String? {
+        didSet {
+            if let id = paramRecoContentAccessID {
+                print("hereparam", id)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +38,9 @@ class HomeVC: UIViewController {
     }
     
     func setUpAllViews() {
-        self.recomendedContentsView.setUpContentsView()
+        self.recomendedContentsView.setUpAndAddGestureToEachView { imageView in
+            self.addGestureToUIPageView(imageView)
+        }
         self.newsContentsView.setUpStackView { imageView in
             self.addGestureToUIView(imageView)
         }
@@ -38,13 +56,71 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func addGestureToUIView(_ uiview: UIImageView) {
+    
+    func addGestureToUIPageView(_ uiimgview: UIImageView) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handlePageTap(sender:)))
+        uiimgview.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handlePageTap(sender: UITapGestureRecognizer) {
+        if let accessContentID = self.recomendedContentsView
+            .imageList[self.recomendedContentsView.contentsPageCtrl.currentPage]
+            .accessibilityValue {
+            
+            self.paramContentID = accessContentID
+            HomepageAPIManager().requestContentsURL(self.paramContentID) { contentStr, error in
+                if let error = error {
+                    print(#function, error.localizedDescription)
+                } else if let contentStr = contentStr {
+                    self.paramContentURL = contentStr
+                }
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "ID-manual-HomeVC-HomeInfoVC", sender: self)
+                }
+            }
+        }
+    }
+    
+    
+    func addGestureToUIView(_ uiimgview: UIImageView) {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        uiview.addGestureRecognizer(tapGesture)
+        if let accessContentID = uiimgview.accessibilityValue {
+            tapGesture.accessibilityValue = accessContentID
+        }
+        uiimgview.addGestureRecognizer(tapGesture)
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer) {
-        self.performSegue(withIdentifier: "ID-manual-HomeVC-HomeInfoVC", sender: self)
+        if let accessContentID = sender.accessibilityValue {
+            self.paramContentID = accessContentID
+            HomepageAPIManager().requestContentsURL(self.paramContentID) { contentStr, error in
+                if let error = error {
+                    print(#function, error.localizedDescription)
+                } else if let contentStr = contentStr {
+                    self.paramContentURL = contentStr
+                    print("hererer1231e", self.paramContentURL, contentStr)
+                }
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "ID-manual-HomeVC-HomeInfoVC", sender: self)
+                }
+            }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ID-manual-HomeVC-HomeInfoVC" {
+            if let infoVC = segue.destination as? HomeInfoVC {
+                print("hererer1e", self.paramContentURL)
+                if let url = self.paramContentURL {
+                    print("hererere2", url)
+                    infoVC.paramContentsURL = url
+                }
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.paramContentURL = nil
     }
     
     //+

@@ -7,11 +7,12 @@
 
 import Foundation
 
-enum ContentsCase {
-    case news
-    case recommend
-    case blog
-    case info
+enum ContentsCase: String {
+    case news = "news"
+    case recommend  = "recommend"
+    case blog  = "blog"
+    case info  = "info"
+    case food  = "food"
 }
 
 struct HomeContentInfo {

@@ -23,15 +23,15 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func didTapLoginBtn(_ sender: Any) {
-        performSegue(withIdentifier: "ID-manual-to-LoginVC", sender: self)
+//        performSegue(withIdentifier: "ID-manual-to-LoginVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ID-manual-to-LoginVC" {
-            if let loginvc = self.storyboard?.instantiateViewController(withIdentifier: "ID-LoginVC") as? LoginVC {
-                loginvc.modalPresentationStyle = .fullScreen
-                self.present(loginvc, animated: true, completion: nil)
-            }
-        }
+//        if segue.identifier == "ID-manual-to-LoginVC" {
+//            if let loginvc = self.storyboard?.instantiateViewController(withIdentifier: "ID-LoginVC") as? LoginVC {
+//                loginvc.modalPresentationStyle = .fullScreen
+//                self.present(loginvc, animated: true, completion: nil)
+//            }
+//        }
     }
 }

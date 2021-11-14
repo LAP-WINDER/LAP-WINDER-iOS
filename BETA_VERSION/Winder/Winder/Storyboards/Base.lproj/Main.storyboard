@@ -289,22 +289,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="세부정보 보여주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shq-Ey-Fff">
-                                <rect key="frame" x="126" y="396" width="122" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVa-eZ-KRd">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QWa-u7-K0j"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GVa-eZ-KRd" firstAttribute="bottom" secondItem="QWa-u7-K0j" secondAttribute="bottom" id="JnJ-IB-AG7"/>
+                            <constraint firstItem="GVa-eZ-KRd" firstAttribute="trailing" secondItem="QWa-u7-K0j" secondAttribute="trailing" id="q7Q-Sp-a8y"/>
+                            <constraint firstItem="GVa-eZ-KRd" firstAttribute="top" secondItem="QWa-u7-K0j" secondAttribute="top" id="xe5-5o-Az2"/>
+                            <constraint firstItem="GVa-eZ-KRd" firstAttribute="leading" secondItem="QWa-u7-K0j" secondAttribute="leading" id="zQP-Gt-83c"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Q5-I3-XPf"/>
+                    <connections>
+                        <outlet property="wkView" destination="GVa-eZ-KRd" id="Nt9-y1-fm2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNd-N3-Wgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="-301"/>
+            <point key="canvasLocation" x="1909.5999999999999" y="-301.47783251231527"/>
         </scene>
         <!--MainTBC-->
         <scene sceneID="pOJ-gq-WHy">
