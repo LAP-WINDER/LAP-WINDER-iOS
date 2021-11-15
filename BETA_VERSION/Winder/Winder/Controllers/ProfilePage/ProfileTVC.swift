@@ -48,15 +48,42 @@ class ProfileTVC: UITableViewController {
     }
     
     func setUpLogInandOutCell() {
-        
+        //
     }
     
     @IBAction func didTapEditProfileBtn(_ sender: Any) {
-        self.performSegue(withIdentifier: "ID-manual-ProfileTVC-EditProfileVC", sender: self)
+        if let _ = SecurityUtils().load(SecurityUtils().bundleName, account: "accessToken") {
+            self.performSegue(withIdentifier: "ID-manual-ProfileTVC-EditProfileVC", sender: self)
+        } else {
+            self.alert("로그인 후 이용해 주세요.", completion: nil)
+        }
     }
     
     @IBAction func didTapLoginBtn(_ sender: Any) {
 //        self.performSegue(withIdentifier: "ID-manual-ProfileTVC-LogInVC", sender: self)
+    }
+    
+    // MARK: 화면 갱신 시 로그인 여부 확인
+    override func viewWillAppear(_ animated: Bool) {
+        //1. 프로필 바꾸기
+        if let _ = SecurityUtils().load(SecurityUtils().bundleName, account: "accessToken") {
+            if let userInfoKey = MemberInfoManager().loadProfile() {
+                self.emailLabel.text = userInfoKey.loginEmail
+                self.nicknameLabel.text = userInfoKey.loginNickname
+                self.loginBtn.isHidden = true
+            }
+        } else {
+            setProfileInit()
+        }
+        
+        //2. 유저아카이브 섹션 막기
+    }
+    
+    private func setProfileInit() {
+        self.nicknameLabel.text = "dongklee"
+        self.emailLabel.text = "lap.winder@gmail.com"
+        self.profileImageView.image = UIImage(named: "profile_sample.png")
+        self.loginBtn.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,6 +94,8 @@ class ProfileTVC: UITableViewController {
             }
         }
     }
+    
+    @IBAction func unwindFromSignUpVC (segue : UIStoryboardSegue) {}
     
     //+
 }
@@ -105,5 +134,18 @@ extension ProfileTVC {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let _ = SecurityUtils().load(SecurityUtils().bundleName, account: "accessToken") {
+            //할 행동
+            if let cell = tableView.cellForRow(at: indexPath) {
+                print("--->\(cell) \(indexPath.row)")
+            }
+            //
+        } else {
+            self.alert("로그인 후 이용해 주세요.", completion: nil)
+            tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+        }
+    }
     
+    //+
 }

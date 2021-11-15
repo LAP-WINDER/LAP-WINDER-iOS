@@ -447,7 +447,7 @@
                                     <color key="backgroundColor" red="0.076596386729999993" green="0.089849151670000002" blue="0.23530775309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="로그인하기"/>
                                     <connections>
                                         <action selector="didTapLoginBtn:" destination="mWS-i5-nCL" eventType="touchUpInside" id="SGF-AE-lRV"/>
                                         <segue destination="2Rq-cl-Bil" kind="show" identifier="ID-action-ProfileTVC-LogInVC" id="pe6-Li-Xbg"/>
@@ -516,6 +516,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPU-3T-cJV">
+                                <rect key="frame" x="16" y="398" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.076596386729999993" green="0.089849151670000002" blue="0.23530775309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃하기"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapLogoutBtn:" destination="gEz-Zx-ebL" eventType="touchUpInside" id="2KB-Xb-ZyU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l4D-oG-xKd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -524,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDS-do-GAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="1119"/>
+            <point key="canvasLocation" x="1277.5999999999999" y="1095.8128078817736"/>
         </scene>
         <!--Log InVC-->
         <scene sceneID="wNr-K3-1lD">
@@ -569,6 +585,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapLoginBtn:" destination="2Rq-cl-Bil" eventType="touchUpInside" id="psY-Q2-VTr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원이 아니신가요? 간편 회원가입으로 와인더의 맞춤형 서비스를 이용할 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGp-B7-tcC">
                                 <rect key="frame" x="25" y="561" width="325" height="57"/>
@@ -652,7 +671,11 @@
                     <navigationItem key="navigationItem" id="dQB-0z-0Mr"/>
                     <connections>
                         <outlet property="CancelBtn" destination="xiu-Gk-218" id="4Nk-hU-mHk"/>
+                        <outlet property="emailTextField" destination="m3N-Qr-S2w" id="YWF-cD-QkV"/>
+                        <outlet property="kakaoLoginBtn" destination="tOc-bO-ngb" id="agl-5J-2YA"/>
                         <outlet property="logoImgView" destination="xQi-SO-fsa" id="tEj-y6-xm6"/>
+                        <outlet property="naverLoginBtn" destination="AGg-sO-xjl" id="zKw-nP-8DN"/>
+                        <outlet property="passwordTextField" destination="0EX-Q2-AoN" id="3Fe-Hw-1CW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sm1-tA-bhW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -691,12 +714,15 @@
                                 <color key="backgroundColor" red="0.4518654346" green="0.077295593920000003" blue="0.88632637260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="가입완료"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapEnrollBtn:" destination="NBA-m3-9JD" eventType="touchUpInside" id="YS1-mk-OS2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1He-zZ-dTW">
                                 <rect key="frame" x="249" y="248" width="117" height="34"/>
@@ -710,6 +736,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapValidNumberBtn:" destination="NBA-m3-9JD" eventType="touchUpInside" id="bLc-3s-CeK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전송된 이메일 인증번호" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaf-eg-40c">
                                 <rect key="frame" x="8" y="219" width="176" height="21"/>
@@ -771,6 +800,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapValidEmailBtn:" destination="NBA-m3-9JD" eventType="touchUpInside" id="QC5-v0-5ct"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이메일 주소" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNR-MG-7jh">
                                 <rect key="frame" x="8" y="99" width="100" height="21"/>
@@ -807,10 +839,31 @@
                     <navigationItem key="navigationItem" title="회원가입" id="12q-i8-kCU">
                         <barButtonItem key="leftBarButtonItem" title="← Back" id="idq-CL-Uog">
                             <color key="tintColor" red="0.4518654346" green="0.077295593920000003" blue="0.88632637260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="didTapDismissBtn:" destination="NBA-m3-9JD" id="dOe-TH-25e"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="cBy-sY-tLe">
+                            <color key="tintColor" red="0.4518654346" green="0.077295593920000003" blue="0.88632637260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="didTapRefreshBtn:" destination="NBA-m3-9JD" id="QJp-KJ-Ua0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailValidMessageLabel" destination="y0z-J2-HAH" id="bTD-tg-Ea9"/>
+                        <outlet property="inputEmailTextField" destination="I0j-ff-qXc" id="xDd-0Q-klb"/>
+                        <outlet property="inputPwdTextField" destination="dwe-MF-ZA9" id="2Bg-59-dPX"/>
+                        <outlet property="numberValidMessageLabel" destination="zsZ-h7-HfE" id="MYS-MR-Mbo"/>
+                        <outlet property="validEmailBtn" destination="YVl-T4-gch" id="hdj-mQ-6E5"/>
+                        <outlet property="validEmailTextField" destination="lgi-F6-hTA" id="NO4-DQ-6iG"/>
+                        <outlet property="validNumberBtn" destination="1He-zZ-dTW" id="Q8r-Ng-73I"/>
+                        <outlet property="validPwdTextField" destination="SW1-rV-mON" id="Tte-Fb-Cxw"/>
+                        <segue destination="fRq-kV-OIC" kind="unwind" identifier="ID-unwindToProfileTVC" unwindAction="unwindFromSignUpVCWithSegue:" id="9Xo-QO-RSo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANy-0M-6s7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fRq-kV-OIC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2494" y="1818"/>
         </scene>

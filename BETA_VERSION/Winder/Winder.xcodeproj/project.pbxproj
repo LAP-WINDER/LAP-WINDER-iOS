@@ -30,6 +30,11 @@
 		234B007C274202A400DB09EA /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B007B274202A400DB09EA /* LogInVC.swift */; };
 		234B007E274202C400DB09EA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B007D274202C400DB09EA /* SignUpVC.swift */; };
 		234B008027420A2300DB09EA /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B007F27420A2300DB09EA /* EditProfileVC.swift */; };
+		234B00822742305500DB09EA /* MemberServiceAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B00812742305500DB09EA /* MemberServiceAPIManager.swift */; };
+		234B00842742309A00DB09EA /* MemberUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B00832742309A00DB09EA /* MemberUserModel.swift */; };
+		234B0087274230C700DB09EA /* SecurityUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B0086274230C700DB09EA /* SecurityUtils.swift */; };
+		234B0089274230EE00DB09EA /* VC+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B0088274230EE00DB09EA /* VC+Extentsion.swift */; };
+		234B008B2742441100DB09EA /* MemberInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B008A2742441100DB09EA /* MemberInfoManager.swift */; };
 		D9AC48C1739E558B9DE5AAD8 /* Pods_Winder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138D03CB23C7AA8099CC199B /* Pods_Winder.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +65,11 @@
 		234B007B274202A400DB09EA /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		234B007D274202C400DB09EA /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		234B007F27420A2300DB09EA /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		234B00812742305500DB09EA /* MemberServiceAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberServiceAPIManager.swift; sourceTree = "<group>"; };
+		234B00832742309A00DB09EA /* MemberUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberUserModel.swift; sourceTree = "<group>"; };
+		234B0086274230C700DB09EA /* SecurityUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityUtils.swift; sourceTree = "<group>"; };
+		234B0088274230EE00DB09EA /* VC+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Extentsion.swift"; sourceTree = "<group>"; };
+		234B008A2742441100DB09EA /* MemberInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoManager.swift; sourceTree = "<group>"; };
 		64DC26B84AC4075E8F4B82C7 /* Pods-Winder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.release.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.release.xcconfig"; sourceTree = "<group>"; };
 		7B911A8B39ED7EB33B640F05 /* Pods-Winder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.debug.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +107,7 @@
 		231E6C1D273E55790055B5A6 /* Winder */ = {
 			isa = PBXGroup;
 			children = (
+				234B0085274230AF00DB09EA /* Utils */,
 				231E6C53273EB0790055B5A6 /* Extensions */,
 				231E6C44273E7AB70055B5A6 /* CustomViews */,
 				231E6C36273E55CB0055B5A6 /* Storyboards */,
@@ -137,6 +148,8 @@
 			children = (
 				231E6C42273E66130055B5A6 /* HomepageAPIManager.swift */,
 				231E6C58273EB2FE0055B5A6 /* MLServiceAPIManager.swift */,
+				234B00812742305500DB09EA /* MemberServiceAPIManager.swift */,
+				234B008A2742441100DB09EA /* MemberInfoManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -146,6 +159,7 @@
 			children = (
 				231E6C4F273E999D0055B5A6 /* HomeContentInfo.swift */,
 				231E6C56273EB2D10055B5A6 /* CapturedImageModel.swift */,
+				234B00832742309A00DB09EA /* MemberUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,8 +231,17 @@
 			children = (
 				231E6C54273EB08F0055B5A6 /* CameraVC+Extention.swift */,
 				234B0073273FB01E00DB09EA /* UIImageView+Extension.swift */,
+				234B0088274230EE00DB09EA /* VC+Extentsion.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		234B0085274230AF00DB09EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				234B0086274230C700DB09EA /* SecurityUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C9CF3B57850ADC8E9B352039 /* Pods */ = {
@@ -355,12 +378,15 @@
 			files = (
 				231E6C46273E7AF70055B5A6 /* RecomendedContentsView.swift in Sources */,
 				231E6C57273EB2D10055B5A6 /* CapturedImageModel.swift in Sources */,
+				234B008B2742441100DB09EA /* MemberInfoManager.swift in Sources */,
 				231E6C4C273E80C60055B5A6 /* InfoContentsView.swift in Sources */,
+				234B0089274230EE00DB09EA /* VC+Extentsion.swift in Sources */,
 				231E6C55273EB08F0055B5A6 /* CameraVC+Extention.swift in Sources */,
 				231E6C48273E800B0055B5A6 /* NewsContentsView.swift in Sources */,
 				231E6C50273E999D0055B5A6 /* HomeContentInfo.swift in Sources */,
 				231E6C1F273E55790055B5A6 /* AppDelegate.swift in Sources */,
 				234B007E274202C400DB09EA /* SignUpVC.swift in Sources */,
+				234B0087274230C700DB09EA /* SecurityUtils.swift in Sources */,
 				231E6C3A273E57100055B5A6 /* HomeVC.swift in Sources */,
 				234B007C274202A400DB09EA /* LogInVC.swift in Sources */,
 				234B008027420A2300DB09EA /* EditProfileVC.swift in Sources */,
@@ -371,6 +397,8 @@
 				231E6C59273EB2FE0055B5A6 /* MLServiceAPIManager.swift in Sources */,
 				231E6C38273E56EA0055B5A6 /* MainTBC.swift in Sources */,
 				231E6C43273E66130055B5A6 /* HomepageAPIManager.swift in Sources */,
+				234B00842742309A00DB09EA /* MemberUserModel.swift in Sources */,
+				234B00822742305500DB09EA /* MemberServiceAPIManager.swift in Sources */,
 				231E6C4A273E80A60055B5A6 /* BlogContentsView.swift in Sources */,
 				231E6C4E273E84850055B5A6 /* HomeInfoVC.swift in Sources */,
 			);
@@ -525,12 +553,14 @@
 				DEVELOPMENT_TEAM = 84C5F9B5MF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Winder/App/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "와인 사진 촬영을 위해 카메라에 접근합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,12 +586,14 @@
 				DEVELOPMENT_TEAM = 84C5F9B5MF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Winder/App/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "와인 사진 촬영을 위해 카메라에 접근합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

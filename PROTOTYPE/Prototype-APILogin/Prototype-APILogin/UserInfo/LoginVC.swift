@@ -67,10 +67,12 @@ class LoginVC: UIViewController {
         return tokenDict
     }
     
+    // MARK: 네이버 로그인
     @IBAction func didTapNaverLoginBtn(_ sender: Any) {
         self.naverLoginInstance?.requestThirdPartyLogin()
     }
     
+    // MARK: 카카오 로그인
     @IBAction func didTapKakaoLoginBtn(_ sender: Any) {
         if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.loginWithKakaoAccount(prompts: [.Login]) { oauthToken, error in
