@@ -204,7 +204,7 @@ extension LogInVC: NaverThirdPartyLoginConnectionDelegate {
         
         guard let refreshToken = self.naverLoginInstance?.refreshToken else { return }
         guard let accessToken = self.naverLoginInstance?.accessToken else { return }
-        
+        //print("\(#function), \(accessToken), \(refreshToken)")
         let tokenInfo = TokenInfo(accessToken: self.setNaverTokenInfo(accessToken),
                                   refreshToken: self.setNaverTokenInfo(refreshToken),
                                   provider: "naver"

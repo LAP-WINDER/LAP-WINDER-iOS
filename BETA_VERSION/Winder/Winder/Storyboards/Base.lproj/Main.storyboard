@@ -346,11 +346,11 @@
             </objects>
             <point key="canvasLocation" x="-510" y="2"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="0TO-5s-KUb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KOy-Z6-GFz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" selectedImage="house.fill" id="8Am-h2-1mU"/>
+                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" selectedImage="house.fill" id="8Am-h2-1mU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TtM-O5-gXA">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -365,11 +365,11 @@
             </objects>
             <point key="canvasLocation" x="379.71014492753625" y="-301.33928571428572"/>
         </scene>
-        <!--Camera-->
+        <!--Navigation Controller-->
         <scene sceneID="Oat-aY-fvj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L6s-kS-kbu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Camera" image="camera.viewfinder" catalog="system" id="52j-CV-u0E"/>
+                    <tabBarItem key="tabBarItem" title="" image="camera.viewfinder" catalog="system" id="52j-CV-u0E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vBG-Pp-XEn">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -384,7 +384,7 @@
             </objects>
             <point key="canvasLocation" x="380" y="380.54187192118229"/>
         </scene>
-        <!--Profile-->
+        <!--ProfileTVC-->
         <scene sceneID="4by-Pi-Cms">
             <objects>
                 <tableViewController storyboardIdentifier="ID-ProfileTVC" id="mWS-i5-nCL" customClass="ProfileTVC" customModule="Winder" customModuleProvider="target" sceneMemberID="viewController">
@@ -486,7 +486,7 @@
                             <outlet property="delegate" destination="mWS-i5-nCL" id="IVP-IA-Q63"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.rectangle.fill" catalog="system" id="PfB-MV-TCj"/>
+                    <tabBarItem key="tabBarItem" title="" image="person.crop.rectangle.fill" catalog="system" id="PfB-MV-TCj"/>
                     <connections>
                         <outlet property="editProfileBtn" destination="wi7-tk-2q7" id="f8j-KA-dh2"/>
                         <outlet property="emailLabel" destination="CMf-Qc-G8X" id="EMU-nQ-NlS"/>

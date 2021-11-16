@@ -35,6 +35,7 @@
 		234B0087274230C700DB09EA /* SecurityUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B0086274230C700DB09EA /* SecurityUtils.swift */; };
 		234B0089274230EE00DB09EA /* VC+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B0088274230EE00DB09EA /* VC+Extentsion.swift */; };
 		234B008B2742441100DB09EA /* MemberInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B008A2742441100DB09EA /* MemberInfoManager.swift */; };
+		23D4E3A32743B65E00361FA1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4E3A22743B65E00361FA1 /* UIColor+Extension.swift */; };
 		D9AC48C1739E558B9DE5AAD8 /* Pods_Winder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138D03CB23C7AA8099CC199B /* Pods_Winder.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		234B0086274230C700DB09EA /* SecurityUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityUtils.swift; sourceTree = "<group>"; };
 		234B0088274230EE00DB09EA /* VC+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Extentsion.swift"; sourceTree = "<group>"; };
 		234B008A2742441100DB09EA /* MemberInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoManager.swift; sourceTree = "<group>"; };
+		23D4E3A22743B65E00361FA1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		64DC26B84AC4075E8F4B82C7 /* Pods-Winder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.release.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.release.xcconfig"; sourceTree = "<group>"; };
 		7B911A8B39ED7EB33B640F05 /* Pods-Winder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.debug.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 				231E6C54273EB08F0055B5A6 /* CameraVC+Extention.swift */,
 				234B0073273FB01E00DB09EA /* UIImageView+Extension.swift */,
 				234B0088274230EE00DB09EA /* VC+Extentsion.swift */,
+				23D4E3A22743B65E00361FA1 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				231E6C43273E66130055B5A6 /* HomepageAPIManager.swift in Sources */,
 				234B00842742309A00DB09EA /* MemberUserModel.swift in Sources */,
 				234B00822742305500DB09EA /* MemberServiceAPIManager.swift in Sources */,
+				23D4E3A32743B65E00361FA1 /* UIColor+Extension.swift in Sources */,
 				231E6C4A273E80A60055B5A6 /* BlogContentsView.swift in Sources */,
 				231E6C4E273E84850055B5A6 /* HomeInfoVC.swift in Sources */,
 			);
