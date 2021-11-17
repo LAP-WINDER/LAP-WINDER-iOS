@@ -1,8 +1,8 @@
 //
 //  SearchListTVC.swift
-//  Prototype-UI
+//  Winder
 //
-//  Created by 이동규 on 2021/11/15.
+//  Created by 이동규 on 2021/11/17.
 //
 
 import Foundation
@@ -14,7 +14,6 @@ class SearchListTVC: UITableViewController {
     var filteredWine = [Wine]()
     
     let searchController = UISearchController(searchResultsController: nil)
-    @IBOutlet weak var searchFilterStackView: UIStackView!
     
     var isFiltering: Bool {
         let searchController = self.navigationItem.searchController
@@ -28,66 +27,9 @@ class SearchListTVC: UITableViewController {
         self.setUpSearchController()
         self.setUpTableView()
         self.setUpWineLists()
-        self.setUpSearchFilterStackView()
     }
     
-    private func setUpSearchFilterStackView() {
-        self.searchFilterStackView.spacing = 8
-        
-        for _ in 0..<6 {
-            /*
-            let view = UIView(frame: CGRect(x: self.searchFilterStackView.frame.minX, y: self.searchFilterStackView.frame.minY, width: self.searchFilterStackView.frame.height * 1.3, height: self.searchFilterStackView.frame.height))
-            view.backgroundColor = .white
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.widthAnchor.constraint(equalToConstant: self.searchFilterStackView.frame.height * 1.3).isActive = true
-            view.layer.cornerRadius = 10
-            view.clipsToBounds = true
-            
-            print(view.frame, view.layer.frame, view.center)
-            let label = UILabel(frame: CGRect(x: view.frame.midX, y: view.frame.midY, width: view.frame.width, height: view.frame.height))
-            //let label = UILabel()
-            label.center = CGPoint(x: view.center.x, y: view.center.y)
-            
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-            label.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true
-            
-            label.text = "전체"
-            label.textColor = UIColor.getWinderColor(.darknavy)
-            
-        
-            print(view.frame, view.layer.frame)
-            let btn = UIButton(frame: CGRect(x: view.frame.minX, y: view.frame.minY, width: view.frame.width, height: view.frame.height))
-            print(btn.frame)
-            btn.center = CGPoint(x: view.center.x, y: view.center.y)
-            btn.setTitle("전체", for: .normal)
-            btn.setTitleColor(UIColor.getWinderColor(.darknavy), for: .normal)
-            btn.setTitleColor(btn.titleColor(for: .highlighted) , for: .highlighted)
-            btn.translatesAutoresizingMaskIntoConstraints = false
-            btn.addTarget(self, action: #selector(btn2filtered(sender:)), for: .touchUpInside)
-            view.addSubview(btn)
-            view.addSubview(label)
-            */
-            
-            let btn = UIButton()
-            btn.widthAnchor.constraint(equalToConstant: self.searchFilterStackView.frame.height * 1.5).isActive = true
-            btn.layer.cornerRadius = 20
-            btn.backgroundColor = .white
-            btn.setTitle("전체", for: .normal)
-            btn.setTitleColor(UIColor.getWinderColor(.darknavy), for: .normal)
-            btn.setTitleColor(btn.titleColor(for: .highlighted) , for: .highlighted)
-            btn.titleLabel?.font = .systemFont(ofSize: CGFloat(17.0) , weight: .semibold)
-            //btn.translatesAutoresizingMaskIntoConstraints = false
-            //btn.accessibilityIdentifier = "전체"  //각 아이디에 맞게
-            btn.addTarget(self, action: #selector(btn2filtered(sender:)), for: .touchUpInside)
-            
-            self.searchFilterStackView.addArrangedSubview(btn)
-        }
-    }
-    
-    // 척도에 따라서 필터 기능 추가 필요
-    @objc
-    func btn2filtered(sender: UIGestureRecognizer) {
+    @IBAction func didTapFilterConditionBtn(_ sender: Any) {
         print(#function)
         guard let popupVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-PopUpToFilterVC") else { return }
         popupVC.modalPresentationStyle = .overFullScreen
@@ -98,6 +40,7 @@ class SearchListTVC: UITableViewController {
     private func setUpTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.rowHeight = 308
     }
     
     private func setUpWineLists() {
@@ -111,10 +54,6 @@ class SearchListTVC: UITableViewController {
     private func setUpSearchController() {
         self.searchController.searchBar.placeholder = "Seach wine from list"
         self.searchController.searchResultsUpdater = self // 중요. 사용자가 검색한 값에 따라 업데이트
-        //
-        //self.searchController.searchBar.scopeButtonTitles = ["전체", "종류", "맛", "국가", "품종", "가격"]
-        //self.searchController.searchBar.showsScopeBar = true
-        //
         self.searchController.navigationItem.hidesSearchBarWhenScrolling = false
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.searchBarStyle = .prominent
@@ -127,6 +66,23 @@ class SearchListTVC: UITableViewController {
         super.viewWillAppear(animated)
         print(#function)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let isActive = self.navigationItem.searchController?.isActive {
+            if isActive {
+                if segue.identifier == "ID-manual-SearchWineTVC-WineInfoVC" {
+                    guard let infoVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-WineInfoVC") as? WineInfoVC else { return }
+                    infoVC.modalPresentationStyle = .fullScreen
+                    self.navigationItem.searchController?.isActive = false
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        self.navigationController?.pushViewController(infoVC, animated: true)
+                    }
+                }
+            }
+        }
+    }
+    
     //+
 }
 
@@ -165,13 +121,13 @@ extension SearchListTVC {
         cell.wineCountryLabel.text = row.manufactureCountry
         cell.wineExportByLabel.text = row.exportCountry
         cell.wineMadeByLabel.text = row.exportCountry
-        cell.wineImageView.image = UIImage(named: "wine_sample.png")
+        cell.wineImageView.image = UIImage(named: "wine_sample_\(indexPath.section).png")
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "ID-Manual-SearchTC-WineInfoVC", sender: self)
+        self.performSegue(withIdentifier: "ID-manual-SearchWineTVC-WineInfoVC", sender: self)
     }
 }
 

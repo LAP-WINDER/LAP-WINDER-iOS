@@ -32,7 +32,7 @@
 		234B00772741693500DB09EA /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		234B008D274291C600DB09EA /* SearchWineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWineCell.swift; sourceTree = "<group>"; };
 		234B008F274291E800DB09EA /* SearchListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTVC.swift; sourceTree = "<group>"; };
-		234B00912742947400DB09EA /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; };
+		234B00912742947400DB09EA /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; usesTabs = 1; };
 		234B0093274295DD00DB09EA /* WineInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineInfoVC.swift; sourceTree = "<group>"; };
 		23C3C12A273A7B2600EA0D86 /* Prototype-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prototype-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C3C12D273A7B2600EA0D86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };

@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 import KakaoSDKUser
+import NaverThirdPartyLogin
 
 class EditProfileVC: UIViewController {
     
+    let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,9 @@ class EditProfileVC: UIViewController {
                         print("logout() success.")
                     }
                 }
+            } else if userInfo.provider == "naver" {
+                print(#function, "login with naver")
+                self.naverLoginInstance?.requestDeleteToken()
             }
         }
         
@@ -51,7 +56,7 @@ class EditProfileVC: UIViewController {
         guard let preVC = self.presentingViewController as? MainTBC else {
             return
         }
-        guard let profileVC = preVC.viewControllers?[2] as? ProfileTVC else {
+        guard let profileVC = preVC.viewControllers?[3] as? ProfileTVC else {
             return
         }
         profileVC.viewWillAppear(true)

@@ -75,7 +75,7 @@ class LogInVC: UIViewController {
         //로직 좀 수정해야할듯
 //        if let _ = SecurityUtils().load(SecurityUtils().bundleName, account: "accessToken"),
 //            let _ = SecurityUtils().load(SecurityUtils().bundleName, account: "refreshToken") {
-            self.naverLoginInstance?.requestDeleteToken()
+//            self.naverLoginInstance?.requestDeleteToken()
 //        }
         self.naverLoginInstance?.requestThirdPartyLogin()
         

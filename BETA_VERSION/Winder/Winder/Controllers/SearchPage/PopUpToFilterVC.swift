@@ -1,8 +1,8 @@
 //
 //  PopUpToFilterVC.swift
-//  Prototype-UI
+//  Winder
 //
-//  Created by 이동규 on 2021/11/16.
+//  Created by 이동규 on 2021/11/17.
 //
 
 import Foundation
@@ -12,7 +12,11 @@ class PopUpToFilterVC: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var popupView: UIView!
-    @IBOutlet weak var dismissBtn: UIButton!
+    @IBOutlet weak var dismissBtn: UIButton! {
+        didSet {
+            dismissBtn.tintColor = UIColor.getWinderColor(.violet)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,7 @@ class PopUpToFilterVC: UIViewController {
     @IBAction func didTapDismissBtn(sender: UIButton) {
         guard let preVC = self.presentingViewController as? MainTBC else { return }
         //print(prevc.viewControllers?[0].children[0])
-        guard let winelistVC = preVC.viewControllers?[0].children[0] as? SearchListTVC else { return }
+        guard let winelistVC = preVC.viewControllers?[1].children[0] as? SearchListTVC else { return }
         winelistVC.viewWillAppear(true)
         self.dismiss(animated: true, completion: nil)
     }

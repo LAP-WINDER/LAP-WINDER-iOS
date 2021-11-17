@@ -1,8 +1,8 @@
 //
 //  WineModel.swift
-//  Prototype-UI
+//  Winder
 //
-//  Created by 이동규 on 2021/11/15.
+//  Created by 이동규 on 2021/11/17.
 //
 
 import Foundation
@@ -22,7 +22,7 @@ struct Wine: Codable {
 class WineModel {
     
     var wineList = [Wine]()
-	
+    
     func loadFromJson() {
         guard let wineDataFromJson = NSDataAsset(name: "ImportWine") else {
             return
