@@ -16,20 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_logo_full" translatesAutoresizingMaskIntoConstraints="NO" id="Bsh-Ww-O72">
-                                <rect key="frame" x="87" y="412" width="240" height="73"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winder_2" translatesAutoresizingMaskIntoConstraints="NO" id="1Ku-Ih-kA0">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Bsh-Ww-O72" secondAttribute="height" multiplier="240:73" id="QWE-uw-QwI"/>
+                                    <constraint firstAttribute="width" constant="240" id="5xu-cf-78d"/>
+                                    <constraint firstAttribute="height" constant="128" id="89p-6G-OrH"/>
+                                    <constraint firstAttribute="width" secondItem="1Ku-Ih-kA0" secondAttribute="height" multiplier="15:8" id="vfd-ih-76a"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.4518654346" green="0.077295593920000003" blue="0.88632637260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bsh-Ww-O72" secondAttribute="bottom" constant="377" id="H6a-Za-7eZ"/>
-                            <constraint firstItem="Bsh-Ww-O72" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="Up4-6x-QKV"/>
-                            <constraint firstItem="Bsh-Ww-O72" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="368" id="dxT-H3-8U4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bsh-Ww-O72" secondAttribute="trailing" constant="87" id="rTh-eN-PBk"/>
+                            <constraint firstItem="1Ku-Ih-kA0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Gt6-CL-lHa"/>
+                            <constraint firstItem="1Ku-Ih-kA0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QVj-26-nB5"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="new_logo_full" width="639" height="155"/>
+        <image name="winder_2" width="791" height="955"/>
     </resources>
 </document>

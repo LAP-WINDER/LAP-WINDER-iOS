@@ -12,6 +12,7 @@
 		230BDC5A2744C4F0008B5B39 /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BDC592744C4F0008B5B39 /* WineModel.swift */; };
 		230BDC5C2744C501008B5B39 /* WineInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BDC5B2744C501008B5B39 /* WineInfoVC.swift */; };
 		230BDC5E2744C518008B5B39 /* PopUpToFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BDC5D2744C518008B5B39 /* PopUpToFilterVC.swift */; };
+		230BDC602746234E008B5B39 /* PopUpToShowResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230BDC5F2746234E008B5B39 /* PopUpToShowResultVC.swift */; };
 		231E6C1F273E55790055B5A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C1E273E55790055B5A6 /* AppDelegate.swift */; };
 		231E6C21273E55790055B5A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231E6C20273E55790055B5A6 /* SceneDelegate.swift */; };
 		231E6C26273E55790055B5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231E6C24273E55790055B5A6 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		234B0087274230C700DB09EA /* SecurityUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B0086274230C700DB09EA /* SecurityUtils.swift */; };
 		234B0089274230EE00DB09EA /* VC+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B0088274230EE00DB09EA /* VC+Extentsion.swift */; };
 		234B008B2742441100DB09EA /* MemberInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B008A2742441100DB09EA /* MemberInfoManager.swift */; };
+		235138FF27479A8E0080B73A /* NewLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235138FE27479A8E0080B73A /* NewLaunchScreen.storyboard */; };
 		23D4E3A32743B65E00361FA1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4E3A22743B65E00361FA1 /* UIColor+Extension.swift */; };
 		D9AC48C1739E558B9DE5AAD8 /* Pods_Winder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138D03CB23C7AA8099CC199B /* Pods_Winder.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,7 @@
 		230BDC592744C4F0008B5B39 /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; usesTabs = 1; };
 		230BDC5B2744C501008B5B39 /* WineInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineInfoVC.swift; sourceTree = "<group>"; };
 		230BDC5D2744C518008B5B39 /* PopUpToFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpToFilterVC.swift; sourceTree = "<group>"; };
+		230BDC5F2746234E008B5B39 /* PopUpToShowResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpToShowResultVC.swift; sourceTree = "<group>"; };
 		231E6C1B273E55790055B5A6 /* Winder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		231E6C1E273E55790055B5A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		231E6C20273E55790055B5A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		234B0086274230C700DB09EA /* SecurityUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityUtils.swift; sourceTree = "<group>"; };
 		234B0088274230EE00DB09EA /* VC+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Extentsion.swift"; sourceTree = "<group>"; };
 		234B008A2742441100DB09EA /* MemberInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoManager.swift; sourceTree = "<group>"; };
+		235138FE27479A8E0080B73A /* NewLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewLaunchScreen.storyboard; sourceTree = "<group>"; };
 		23D4E3A22743B65E00361FA1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		64DC26B84AC4075E8F4B82C7 /* Pods-Winder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.release.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.release.xcconfig"; sourceTree = "<group>"; };
 		7B911A8B39ED7EB33B640F05 /* Pods-Winder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.debug.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				231E6C24273E55790055B5A6 /* Main.storyboard */,
+				235138FE27479A8E0080B73A /* NewLaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				231E6C51273EB0650055B5A6 /* CameraVC.swift */,
+				230BDC5F2746234E008B5B39 /* PopUpToShowResultVC.swift */,
 			);
 			path = CameraPage;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 			files = (
 				231E6C2B273E557C0055B5A6 /* LaunchScreen.storyboard in Resources */,
 				231E6C28273E557C0055B5A6 /* Assets.xcassets in Resources */,
+				235138FF27479A8E0080B73A /* NewLaunchScreen.storyboard in Resources */,
 				231E6C26273E55790055B5A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +405,7 @@
 				231E6C57273EB2D10055B5A6 /* CapturedImageModel.swift in Sources */,
 				234B008B2742441100DB09EA /* MemberInfoManager.swift in Sources */,
 				231E6C4C273E80C60055B5A6 /* InfoContentsView.swift in Sources */,
+				230BDC602746234E008B5B39 /* PopUpToShowResultVC.swift in Sources */,
 				234B0089274230EE00DB09EA /* VC+Extentsion.swift in Sources */,
 				230BDC5C2744C501008B5B39 /* WineInfoVC.swift in Sources */,
 				231E6C55273EB08F0055B5A6 /* CameraVC+Extention.swift in Sources */,
@@ -579,7 +587,7 @@
 				INFOPLIST_FILE = Winder/App/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "와인 사진 촬영을 위해 카메라에 접근합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = NewLaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -612,7 +620,7 @@
 				INFOPLIST_FILE = Winder/App/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "와인 사진 촬영을 위해 카메라에 접근합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = NewLaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

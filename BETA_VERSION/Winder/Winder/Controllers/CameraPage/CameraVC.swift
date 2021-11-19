@@ -15,6 +15,7 @@ class CameraVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(#function)
         self.imagePicker.delegate = self
     }
     
@@ -24,7 +25,11 @@ class CameraVC: UIViewController {
     }
     
     @IBAction func didTapPushBtn(_ sender: Any) {
-        self.alert("사진이 전송되어 분석 중 입니다.", completion: nil)
+        //self.alert("사진이 전송되어 분석 중 입니다.", completion: nil)
+        guard let popupResultVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-PopUpToShowResultVC") else { return }
+        popupResultVC.modalPresentationStyle = .overFullScreen
+        self.present(popupResultVC, animated: true, completion: nil)
+        
         /*
         // 뷰에 보여지고 있는 데이터 래핑
         let capturedImageModel = CapturedImageModel(capturedImage: self.CameraImageView.image, paramName: "fieldname", fileName: "capturedUserInput.png")
@@ -35,5 +40,16 @@ class CameraVC: UIViewController {
          */
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(#function)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ID-manual-CameraVC-WineInfoVC" {
+            // 나중에 API 데이터 전송
+        }
+    }
+    
+    //+
 }

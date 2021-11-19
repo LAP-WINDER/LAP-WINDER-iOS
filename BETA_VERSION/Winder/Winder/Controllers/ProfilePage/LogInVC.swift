@@ -60,7 +60,7 @@ class LogInVC: UIViewController {
     }
     
     private func setUpViews() {
-        self.logoImgView.image = UIImage(named: "app_logo_full")
+        self.logoImgView.image = UIImage(named: "winder_1.png")
     }
     
     @objc

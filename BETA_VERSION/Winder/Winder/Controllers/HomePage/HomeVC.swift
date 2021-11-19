@@ -10,6 +10,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    
     @IBOutlet weak var recomendedContentsView: RecomendedContentsView! {
         didSet {
             print(#function, "is called.")
@@ -33,8 +34,13 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpNavBarItem()
         self.setUpAllViews()
         self.setupNavBarSettings()
+    }
+    
+    private func setUpNavBarItem() {
+        //
     }
     
     func setUpAllViews() {
@@ -54,6 +60,19 @@ class HomeVC: UIViewController {
     
     func setupNavBarSettings() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        //self.navigationController?.navigationBar.sizeToFit()
+        
+        /*
+        // 이미지+라지타이틀
+        self.navigationItem.largeTitleDisplayMode = .automatic
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "winder_homepage.png")
+        imageView.image = image
+        self.navigationItem.titleView = imageView
+        self.navigationItem.titleView?.sizeToFit()
+        print(self.navigationController?.navigationBar.subviews)    //계층 찾아서 이미지 추가하기
+        */
     }
     
     
@@ -125,3 +144,4 @@ class HomeVC: UIViewController {
     
     //+
 }
+

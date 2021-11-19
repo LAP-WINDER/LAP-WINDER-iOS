@@ -2,20 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>와인 사진 촬영을 위해 카메라에 접근합니다.</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
-	<key>KAKAO_API_KEY</key>
-	<string>531284120fa0a7d5009dc8a8d9f207d2</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>kakao531284120fa0a7d5009dc8a8d9f207d2</string>
-		<string>kakaokompassauth</string>
-		<string>kakaolink</string>
-		<string>naversearchapp</string>
-		<string>naversearchthirdlogin</string>
-	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -36,6 +22,16 @@
 				<string>naverlogin</string>
 			</array>
 		</dict>
+	</array>
+	<key>KAKAO_API_KEY</key>
+	<string>531284120fa0a7d5009dc8a8d9f207d2</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakao531284120fa0a7d5009dc8a8d9f207d2</string>
+		<string>kakaokompassauth</string>
+		<string>kakaolink</string>
+		<string>naversearchapp</string>
+		<string>naversearchthirdlogin</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

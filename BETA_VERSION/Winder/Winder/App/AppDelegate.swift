@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        sleep(2)
+        sleep(1)
         
         // 카카오 API 키 초기화
         KakaoSDKCommon.initSDK(appKey: "531284120fa0a7d5009dc8a8d9f207d2")
@@ -60,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: 로그인 API 연동에 필요한 사용자 인증 함수 추가 (iOS13 이하)
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         // 네이버
         NaverThirdPartyLoginConnection.getSharedInstance().application(app, open: url, options: options)
@@ -71,6 +70,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    // MARK: 지원할 화면 방향 지정
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return [.portrait]
     }
 }
 

@@ -74,6 +74,7 @@ class WineInfoVC: UIViewController {
     
     @IBAction func didTapCancelBtn(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)
+        //self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didTapLikeBtn(_ sender: Any) {
@@ -86,7 +87,7 @@ class WineInfoVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.navBarHidden()
+        self.navBarHidden()
     }
     
     func navBarHidden() {
@@ -106,6 +107,8 @@ class WineInfoVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        print(#function)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 

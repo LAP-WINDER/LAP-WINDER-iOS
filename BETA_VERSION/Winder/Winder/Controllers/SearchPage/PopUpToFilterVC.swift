@@ -12,11 +12,7 @@ class PopUpToFilterVC: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var popupView: UIView!
-    @IBOutlet weak var dismissBtn: UIButton! {
-        didSet {
-            dismissBtn.tintColor = UIColor.getWinderColor(.violet)
-        }
-    }
+    @IBOutlet weak var dismissBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +24,7 @@ class PopUpToFilterVC: UIViewController {
         self.backgroundView.backgroundColor = .systemGray.withAlphaComponent(0.5)
         self.popupView.layer.cornerRadius = 20
         self.dismissBtn.setTitle("", for: .normal)
+        self.dismissBtn.tintColor = UIColor.getWinderColor(.violet)
     }
 
     @IBAction func didTapDismissBtn(sender: UIButton) {
