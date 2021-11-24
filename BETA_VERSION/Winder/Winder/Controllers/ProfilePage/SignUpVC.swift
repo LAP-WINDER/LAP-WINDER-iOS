@@ -13,7 +13,14 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var inputEmailTextField: UITextField! { didSet { inputEmailTextField.delegate = self } }
     @IBOutlet weak var validEmailTextField: UITextField! { didSet { validEmailTextField.delegate = self } }
     @IBOutlet weak var inputPwdTextField: UITextField! { didSet { inputPwdTextField.delegate = self } }
-    @IBOutlet weak var validPwdTextField: UITextField! { didSet { validPwdTextField.delegate = self } }
+    @IBOutlet weak var validPwdTextField: UITextField! {
+        didSet {
+            validPwdTextField.delegate = self
+            validPwdTextField.accessibilityValue = "LastTF"
+        }
+    }
+    
+    var keyHeight: CGFloat = 0.0
     
     @IBOutlet weak var validEmailBtn: UIButton!
     @IBOutlet weak var validNumberBtn: UIButton!
@@ -88,10 +95,16 @@ class SignUpVC: UIViewController {
                     }
                 } else {
                     self.alert("비밀번호를 다시 확인해주세요.", completion: nil)
+                    if self.validPwdTextField.isFirstResponder {
+                        self.validPwdTextField.resignFirstResponder()
+                    }
                 }
             }
         } else {
             self.alert("이메일 인증이 필요합니다.", completion: nil)
+            if self.validPwdTextField.isFirstResponder {
+                self.validPwdTextField.resignFirstResponder()
+            }
         }
     }
     
@@ -111,6 +124,7 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initParams()
+        self.setUpKeyboardNotification()
     }
     
     private func initParams() {
@@ -121,11 +135,42 @@ class SignUpVC: UIViewController {
         self.numberValidMessageLabel.text = self.MessageValidNumberUtils[2]
     }
     
+    private func setUpKeyboardNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if keyHeight <= self.view.frame.height - keyboardSize.height {
+                return
+            }
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+        self.keyHeight = 0
+    }
     //+
 }
 
 // MARK: -- 텍스트필드 델리게이트
 extension SignUpVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.accessibilityValue == "LastTF" {
+            self.keyHeight = textField.frame.origin.y + textField.frame.height
+        } else {
+            self.keyHeight = 0
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //print("\(#function), \(textField)")
         textField.resignFirstResponder()

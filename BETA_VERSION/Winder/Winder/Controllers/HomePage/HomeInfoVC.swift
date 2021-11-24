@@ -21,6 +21,10 @@ class HomeInfoVC: UIViewController {
     var paramContentsID: Int?
     var paramContentsURL: String?
     
+    @IBAction func didTapDismissTap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpWebView()

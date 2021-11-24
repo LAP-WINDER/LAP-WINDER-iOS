@@ -15,6 +15,9 @@
 		236781B927325A5A0068E9A4 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236781B827325A5A0068E9A4 /* CameraVC.swift */; };
 		236781BD27325C570068E9A4 /* MLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236781BC27325C570068E9A4 /* MLService.swift */; };
 		236781C22732928B0068E9A4 /* CapturedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236781C12732928B0068E9A4 /* CapturedImageModel.swift */; };
+		236BF27F274A625D00423A32 /* testVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BF27E274A625D00423A32 /* testVC.swift */; };
+		236BF281274A626800423A32 /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BF280274A626800423A32 /* WineModel.swift */; };
+		236BF283274A627C00423A32 /* SearchWineAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BF282274A627C00423A32 /* SearchWineAPIManager.swift */; };
 		2398EFE327383AF200E827E1 /* CustomCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398EFE227383AF200E827E1 /* CustomCameraVC.swift */; };
 		23C3C0AE2738D00500EA0D86 /* CapturedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3C0AD2738D00500EA0D86 /* CapturedVC.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,9 @@
 		236781B827325A5A0068E9A4 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		236781BC27325C570068E9A4 /* MLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLService.swift; sourceTree = "<group>"; };
 		236781C12732928B0068E9A4 /* CapturedImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedImageModel.swift; sourceTree = "<group>"; };
+		236BF27E274A625D00423A32 /* testVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testVC.swift; sourceTree = "<group>"; };
+		236BF280274A626800423A32 /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; };
+		236BF282274A627C00423A32 /* SearchWineAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWineAPIManager.swift; sourceTree = "<group>"; };
 		2398EFE227383AF200E827E1 /* CustomCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraVC.swift; sourceTree = "<group>"; };
 		23C3C0AD2738D00500EA0D86 /* CapturedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +94,7 @@
 		236781B62732586D0068E9A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				236BF27D274A624800423A32 /* Page3 */,
 				236781B827325A5A0068E9A4 /* CameraVC.swift */,
 				2398EFE227383AF200E827E1 /* CustomCameraVC.swift */,
 				23C3C0AD2738D00500EA0D86 /* CapturedVC.swift */,
@@ -117,6 +124,16 @@
 				236781C12732928B0068E9A4 /* CapturedImageModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		236BF27D274A624800423A32 /* Page3 */ = {
+			isa = PBXGroup;
+			children = (
+				236BF27E274A625D00423A32 /* testVC.swift */,
+				236BF280274A626800423A32 /* WineModel.swift */,
+				236BF282274A627C00423A32 /* SearchWineAPIManager.swift */,
+			);
+			path = Page3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236BF281274A626800423A32 /* WineModel.swift in Sources */,
+				236BF283274A627C00423A32 /* SearchWineAPIManager.swift in Sources */,
+				236BF27F274A625D00423A32 /* testVC.swift in Sources */,
 				2398EFE327383AF200E827E1 /* CustomCameraVC.swift in Sources */,
 				236781BD27325C570068E9A4 /* MLService.swift in Sources */,
 				236781A2273255BD0068E9A4 /* AppDelegate.swift in Sources */,

@@ -59,20 +59,16 @@ class HomeVC: UIViewController {
     }
     
     func setupNavBarSettings() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        //self.navigationController?.navigationBar.sizeToFit()
+        //self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.sizeToFit()
         
-        /*
         // 이미지+라지타이틀
-        self.navigationItem.largeTitleDisplayMode = .automatic
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "winder_homepage.png")
-        imageView.image = image
-        self.navigationItem.titleView = imageView
-        self.navigationItem.titleView?.sizeToFit()
-        print(self.navigationController?.navigationBar.subviews)    //계층 찾아서 이미지 추가하기
-        */
+        navigationItem.largeTitleDisplayMode = .automatic
+        let logoImageView = UIImageView.init(image: UIImage(named: "winder_homepage.png"))
+        logoImageView.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        logoImageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = logoImageView
+        navigationItem.titleView?.sizeToFit()
     }
     
     

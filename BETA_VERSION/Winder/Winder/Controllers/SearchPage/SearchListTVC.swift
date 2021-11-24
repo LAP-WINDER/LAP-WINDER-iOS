@@ -10,8 +10,8 @@ import UIKit
 
 class SearchListTVC: UITableViewController {
     
-    var wineModel = WineModel()
-    var filteredWine = [Wine]()
+    lazy var wineModel = WineModel()
+    lazy var filteredWine = [WineCell]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -24,9 +24,10 @@ class SearchListTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpSearchController()
-        self.setUpTableView()
         self.setUpWineLists()
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        self.setUpSearchController()
+        
     }
     
     @IBAction func didTapFilterConditionBtn(_ sender: Any) {
@@ -44,10 +45,10 @@ class SearchListTVC: UITableViewController {
     }
     
     private func setUpWineLists() {
-        self.wineModel.loadFromJson()
-        self.filteredWine = self.wineModel.wineList
-        DispatchQueue.main.async {
+        self.wineModel.loadFromAPI {
+            self.filteredWine = self.wineModel.wineCellList
             self.tableView.reloadData()
+            self.setUpTableView()
         }
     }
     
@@ -68,16 +69,56 @@ class SearchListTVC: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let isActive = self.navigationItem.searchController?.isActive {
-            if isActive {
-                if segue.identifier == "ID-manual-SearchWineTVC-WineInfoVC" {
-                    guard let infoVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-WineInfoVC") as? WineInfoVC else { return }
-                    infoVC.modalPresentationStyle = .fullScreen
+        if segue.identifier == "ID-manual-SearchWineTVC-WineInfoVC" {
+            guard let infoVC = segue.destination as? WineInfoVC else { return }
+            infoVC.modalPresentationStyle = .fullScreen
+            if let isActive = self.navigationItem.searchController?.isActive {
+                if isActive {
+                    print("here!!", infoVC)
                     self.navigationItem.searchController?.isActive = false
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                        self.navigationController?.pushViewController(infoVC, animated: true)
+                    if let indexPath = sender as? IndexPath {
+                        print("here!!", infoVC, indexPath)
+                        let row = self.isFiltering ? self.filteredWine[indexPath.section] : self.wineModel.wineCellList[indexPath.section]
+                        WineModel().loadDetailFromAPI(wineID: row.id ?? 1591326) { wineDetail in
+                            if let wineDetail = wineDetail {
+                                infoVC.wineDetail = wineDetail
+//                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+//                                    self.navigationController?.pushViewController(infoVC, animated: true)
+//                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                                    self.navigationController?.pushViewController(infoVC, animated: true)
+                                }
+                            }
+                        }
                     }
+                } else {
+                    print("here!!", infoVC)
+                    if let indexPath = sender as? IndexPath {
+                        print("here!!", infoVC, indexPath)
+                        let row = self.isFiltering ? self.filteredWine[indexPath.section] : self.wineModel.wineCellList[indexPath.section]
+                        print(#function, row.id)
+                        WineModel().loadDetailFromAPI(wineID: row.id ?? 1591326) { wineDetail in
+                            if let wineDetail = wineDetail {
+                                infoVC.wineDetail = wineDetail
+                            }
+                        }
+                        
+                        //self.navigationController?.pushViewController(infoVC, animated: true)
+                    }
+                }
+            }
+        }
+    }
+    
+    func getImageFromURL(_ urlStr: String, completion: @escaping (UIImage?) -> ()) {
+        let url = URL(string: urlStr)
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                if let image = UIImage(data: data!) {
+                    completion(image)
+                } else {
+                    print(#function, "parse error")
                 }
             }
         }
@@ -102,7 +143,7 @@ extension SearchListTVC {
     
     // 대신 섹션 개수를 원래 대로
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return (self.isFiltering ? self.filteredWine.count : self.wineModel.wineList.count)
+        return (self.isFiltering ? self.filteredWine.count : self.wineModel.wineCellList.count)
     }
     
     // 셀 섹션 헤더높이
@@ -115,19 +156,35 @@ extension SearchListTVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ID-SearchWineCell", for: indexPath) as! SearchWineCell
         
         // 검색때는 필터링 로우로 바꾸기 -> 섹션으로 커스텀함
-        let row = self.isFiltering ? self.filteredWine[indexPath.section] : self.wineModel.wineList[indexPath.section]
+        let row = self.isFiltering ? self.filteredWine[indexPath.section] : self.wineModel.wineCellList[indexPath.section]
         
-        cell.wineTitleLabel.text = row.nameEng
-        cell.wineCountryLabel.text = row.manufactureCountry
-        cell.wineExportByLabel.text = row.exportCountry
-        cell.wineMadeByLabel.text = row.exportCountry
-        cell.wineImageView.image = UIImage(named: "wine_sample_\(indexPath.section).png")
+        // MARK: - api에 맞춰서변경해야함
+        
+        self.getImageFromURL(row.image["wine_bottle"]!) { image in
+            if let image = image {
+                cell.wineImageView.image = image
+            }
+        }
+        
+        self.getImageFromURL(row.image["country_flag"]!) { image in
+            if let image = image {
+                cell.wineCountryIcon.image = image
+            }
+        }
+        
+        cell.wineryLabel.text = row.winery
+        cell.wineTitleLabel.text = row.name
+        cell.wineCountryAndRegionLabel.text = "\(row.country), \(row.region)"
+        //cell.wineTypeLabel.text = row. // 와인타입은 패싱중
+        cell.ratingLabel.text = row.rating
+        cell.priceLabel.text = row.price
+        // 셀 안에 5로 둥글게
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "ID-manual-SearchWineTVC-WineInfoVC", sender: self)
+        self.performSegue(withIdentifier: "ID-manual-SearchWineTVC-WineInfoVC", sender: indexPath)
     }
 }
 
@@ -135,8 +192,8 @@ extension SearchListTVC {
 extension SearchListTVC: UISearchResultsUpdating {
     
     func filteredContentForSearchText(_ searchText:String){
-        self.filteredWine = wineModel.wineList.filter({ wine -> Bool in
-            return wine.nameEng.uppercased().contains(searchText.uppercased()) || wine.manufactureCountry.contains(searchText)
+        self.filteredWine = self.wineModel.wineCellList.filter({ wine -> Bool in
+            return wine.name.uppercased().contains(searchText.uppercased()) || wine.country.contains(searchText) || wine.region.contains(searchText)
         })
         self.tableView.reloadData()
     }

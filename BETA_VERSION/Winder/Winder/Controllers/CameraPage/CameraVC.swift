@@ -10,12 +10,15 @@ import UIKit
 
 class CameraVC: UIViewController {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var CameraImageView: UIImageView!
     let imagePicker = UIImagePickerController()
     
+    var paramWineID: Int64?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
         self.imagePicker.delegate = self
     }
     
@@ -26,6 +29,10 @@ class CameraVC: UIViewController {
     
     @IBAction func didTapPushBtn(_ sender: Any) {
         //self.alert("사진이 전송되어 분석 중 입니다.", completion: nil)
+        self.spinner.startAnimating()
+        sleep(2)
+        self.spinner.stopAnimating()
+        self.spinner.hidesWhenStopped = true
         guard let popupResultVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-PopUpToShowResultVC") else { return }
         popupResultVC.modalPresentationStyle = .overFullScreen
         self.present(popupResultVC, animated: true, completion: nil)
@@ -47,8 +54,17 @@ class CameraVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ID-manual-CameraVC-WineInfoVC" {
-            // 나중에 API 데이터 전송
+            guard let infoVC = segue.destination as? WineInfoVC else { return }
+            //infoVC.modalPresentationStyle = .fullScreen
+            //self.navigationItem.searchController?.isActive = false
+            print(self.paramWineID)
+            WineModel().loadDetailFromAPI(wineID: self.paramWineID ?? 1591326) { wineDetail in
+                if let wineDetail = wineDetail {
+                    infoVC.wineDetail = wineDetail
+                }
+            }
         }
+        //+
     }
     
     //+

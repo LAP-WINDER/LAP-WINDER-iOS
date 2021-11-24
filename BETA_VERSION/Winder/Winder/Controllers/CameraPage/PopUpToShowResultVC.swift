@@ -34,6 +34,7 @@ class PopUpToShowResultVC: UIViewController {
     @IBAction func didTapYesBtn(_ sender: Any) {
         guard let mainTBC = self.presentingViewController as? MainTBC else { return }
         guard let preVC = mainTBC.viewControllers?[2].children[0] as? CameraVC else { return }
+        preVC.paramWineID = 1591326 // 서버통신값으로 바꾸기, 생각해보니 서버통신결과는 cameraVC에..?
         self.dismiss(animated: true) {
             preVC.performSegue(withIdentifier: "ID-manual-CameraVC-WineInfoVC", sender: nil)
         }

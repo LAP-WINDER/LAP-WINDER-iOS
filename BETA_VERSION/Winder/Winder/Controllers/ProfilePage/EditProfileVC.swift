@@ -13,9 +13,14 @@ import NaverThirdPartyLogin
 class EditProfileVC: UIViewController {
     
     let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+    @IBOutlet weak var tableView: UITableView!
+    
+    let cellList = ["프로필 사진 변경", "닉네임 변경"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     @IBAction func didTapLogoutBtn(_ sender: Any) {
@@ -61,5 +66,35 @@ class EditProfileVC: UIViewController {
         }
         profileVC.viewWillAppear(true)
     }
+    
+}
+
+extension EditProfileVC: UITableViewDelegate & UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return self.cellList.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Edit your profile"
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "ID-EditProfileCell", for: indexPath)
+        
+        cell.textLabel?.text = self.cellList[indexPath.row]
+        
+        return cell
+    }
+    
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2300E7712748CD80003D7131 /* ScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2300E7702748CD80003D7131 /* ScrollVC.swift */; };
+		2300E7752748EFE4003D7131 /* SignUpOriginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2300E7742748EFE4003D7131 /* SignUpOriginVC.swift */; };
 		2307286C273F5B7300933197 /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2307286B273F5B7300933197 /* ProfileTVC.swift */; };
 		234B007627414FAB00DB09EA /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B007527414FAB00DB09EA /* LogInVC.swift */; };
 		234B00782741693500DB09EA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B00772741693500DB09EA /* SignUpVC.swift */; };
@@ -14,6 +16,8 @@
 		234B0090274291E800DB09EA /* SearchListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B008F274291E800DB09EA /* SearchListTVC.swift */; };
 		234B00922742947400DB09EA /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B00912742947400DB09EA /* WineModel.swift */; };
 		234B0094274295DD00DB09EA /* WineInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B0093274295DD00DB09EA /* WineInfoVC.swift */; };
+		236BF286274A660B00423A32 /* WineModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BF285274A660B00423A32 /* WineModel2.swift */; };
+		236BF288274A662800423A32 /* SearchWineAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BF287274A662800423A32 /* SearchWineAPIManager.swift */; };
 		23C3C12E273A7B2600EA0D86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3C12D273A7B2600EA0D86 /* AppDelegate.swift */; };
 		23C3C130273A7B2600EA0D86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3C12F273A7B2600EA0D86 /* SceneDelegate.swift */; };
 		23C3C135273A7B2700EA0D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C3C133273A7B2700EA0D86 /* Main.storyboard */; };
@@ -27,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2300E7702748CD80003D7131 /* ScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollVC.swift; sourceTree = "<group>"; };
+		2300E7742748EFE4003D7131 /* SignUpOriginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOriginVC.swift; sourceTree = "<group>"; };
 		2307286B273F5B7300933197 /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		234B007527414FAB00DB09EA /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		234B00772741693500DB09EA /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -34,6 +40,8 @@
 		234B008F274291E800DB09EA /* SearchListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTVC.swift; sourceTree = "<group>"; };
 		234B00912742947400DB09EA /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; usesTabs = 1; };
 		234B0093274295DD00DB09EA /* WineInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineInfoVC.swift; sourceTree = "<group>"; };
+		236BF285274A660B00423A32 /* WineModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel2.swift; sourceTree = "<group>"; };
+		236BF287274A662800423A32 /* SearchWineAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWineAPIManager.swift; sourceTree = "<group>"; };
 		23C3C12A273A7B2600EA0D86 /* Prototype-UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prototype-UI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C3C12D273A7B2600EA0D86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23C3C12F273A7B2600EA0D86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +73,7 @@
 				2307286B273F5B7300933197 /* ProfileTVC.swift */,
 				234B007527414FAB00DB09EA /* LogInVC.swift */,
 				234B00772741693500DB09EA /* SignUpVC.swift */,
+				2300E7742748EFE4003D7131 /* SignUpOriginVC.swift */,
 			);
 			path = Page3;
 			sourceTree = "<group>";
@@ -80,6 +89,15 @@
 				23D4E3A42743E36500361FA1 /* PopUpToFilterVC.swift */,
 			);
 			path = Page0;
+			sourceTree = "<group>";
+		};
+		236BF284274A65D100423A32 /* TestAPI */ = {
+			isa = PBXGroup;
+			children = (
+				236BF285274A660B00423A32 /* WineModel2.swift */,
+				236BF287274A662800423A32 /* SearchWineAPIManager.swift */,
+			);
+			path = TestAPI;
 			sourceTree = "<group>";
 		};
 		23C3C121273A7B2600EA0D86 = {
@@ -143,7 +161,9 @@
 		23C3C144273A7C1300EA0D86 /* Page1 */ = {
 			isa = PBXGroup;
 			children = (
+				236BF284274A65D100423A32 /* TestAPI */,
 				23C3C146273A7D5100EA0D86 /* FirstVC.swift */,
+				2300E7702748CD80003D7131 /* ScrollVC.swift */,
 			);
 			path = Page1;
 			sourceTree = "<group>";
@@ -238,10 +258,14 @@
 				234B00782741693500DB09EA /* SignUpVC.swift in Sources */,
 				234B008E274291C600DB09EA /* SearchWineCell.swift in Sources */,
 				23C3C12E273A7B2600EA0D86 /* AppDelegate.swift in Sources */,
+				2300E7712748CD80003D7131 /* ScrollVC.swift in Sources */,
 				2307286C273F5B7300933197 /* ProfileTVC.swift in Sources */,
 				23C3C14C273A97A800EA0D86 /* ProfileVC.swift in Sources */,
+				2300E7752748EFE4003D7131 /* SignUpOriginVC.swift in Sources */,
+				236BF288274A662800423A32 /* SearchWineAPIManager.swift in Sources */,
 				234B00922742947400DB09EA /* WineModel.swift in Sources */,
 				234B0090274291E800DB09EA /* SearchListTVC.swift in Sources */,
+				236BF286274A660B00423A32 /* WineModel2.swift in Sources */,
 				23C3C147273A7D5100EA0D86 /* FirstVC.swift in Sources */,
 				23D4E3A52743E36500361FA1 /* PopUpToFilterVC.swift in Sources */,
 				234B007627414FAB00DB09EA /* LogInVC.swift in Sources */,

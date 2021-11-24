@@ -29,7 +29,7 @@ class CustomCameraVC: UIViewController {
     var isBackCamera = true
     
     @IBAction func didTapCaptureBtn(_ sender: Any) {
-        captureOutput(self.photoOutput, didOutput: nil, from: <#T##AVCaptureConnection#>)
+        //captureOutput(self.photoOutput, didOutput: nil, from: <#T##AVCaptureConnection#>)
     }
     
     override func viewDidLoad() {
