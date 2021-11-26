@@ -74,21 +74,16 @@ class SearchListTVC: UITableViewController {
             infoVC.modalPresentationStyle = .fullScreen
             if let isActive = self.navigationItem.searchController?.isActive {
                 if isActive {
-                    print("here!!", infoVC)
                     self.navigationItem.searchController?.isActive = false
                     if let indexPath = sender as? IndexPath {
-                        print("here!!", infoVC, indexPath)
                         let row = self.isFiltering ? self.filteredWine[indexPath.section] : self.wineModel.wineCellList[indexPath.section]
                         WineModel().loadDetailFromAPI(wineID: row.id ?? 1591326) { wineDetail in
                             if let wineDetail = wineDetail {
                                 infoVC.wineDetail = wineDetail
-//                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-//                                    self.navigationController?.pushViewController(infoVC, animated: true)
-//                                }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                                    self.navigationController?.pushViewController(infoVC, animated: true)
-                                }
                             }
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.navigationController?.pushViewController(infoVC, animated: true)
                         }
                     }
                 } else {
