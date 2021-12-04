@@ -52,6 +52,8 @@
 		236BF293274BB23200423A32 /* WineInfoManufactureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BF292274BB23200423A32 /* WineInfoManufactureView.swift */; };
 		236BF295274BB25700423A32 /* WineInfoRatingPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BF294274BB25700423A32 /* WineInfoRatingPriceView.swift */; };
 		236BF297274BB2F500423A32 /* WineInfoDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BF296274BB2F500423A32 /* WineInfoDescriptionView.swift */; };
+		239BAA702758C4460042BB07 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239BAA6F2758C4460042BB07 /* UIImage+Extension.swift */; };
+		23B83FC22756114B00BC6D95 /* PrivacyInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B83FC12756114B00BC6D95 /* PrivacyInfoVC.swift */; };
 		23D4E3A32743B65E00361FA1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4E3A22743B65E00361FA1 /* UIColor+Extension.swift */; };
 		D9AC48C1739E558B9DE5AAD8 /* Pods_Winder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138D03CB23C7AA8099CC199B /* Pods_Winder.framework */; };
 /* End PBXBuildFile section */
@@ -105,6 +107,8 @@
 		236BF292274BB23200423A32 /* WineInfoManufactureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineInfoManufactureView.swift; sourceTree = "<group>"; };
 		236BF294274BB25700423A32 /* WineInfoRatingPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineInfoRatingPriceView.swift; sourceTree = "<group>"; };
 		236BF296274BB2F500423A32 /* WineInfoDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineInfoDescriptionView.swift; sourceTree = "<group>"; };
+		239BAA6F2758C4460042BB07 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		23B83FC12756114B00BC6D95 /* PrivacyInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyInfoVC.swift; sourceTree = "<group>"; };
 		23D4E3A22743B65E00361FA1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		64DC26B84AC4075E8F4B82C7 /* Pods-Winder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.release.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.release.xcconfig"; sourceTree = "<group>"; };
 		7B911A8B39ED7EB33B640F05 /* Pods-Winder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.debug.xcconfig"; path = "Target Support Files/Pods-Winder/Pods-Winder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				231E6C4F273E999D0055B5A6 /* HomeContentInfo.swift */,
 				231E6C56273EB2D10055B5A6 /* CapturedImageModel.swift */,
 				234B00832742309A00DB09EA /* MemberUserModel.swift */,
+				230BDC592744C4F0008B5B39 /* WineModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,7 +238,6 @@
 				236BF289274BB10D00423A32 /* WineInfoStackView */,
 				230BDC552744C4CC008B5B39 /* SearchListTVC.swift */,
 				230BDC572744C4E3008B5B39 /* SearchWineCell.swift */,
-				230BDC592744C4F0008B5B39 /* WineModel.swift */,
 				230BDC5B2744C501008B5B39 /* WineInfoVC.swift */,
 				230BDC5D2744C518008B5B39 /* PopUpToFilterVC.swift */,
 			);
@@ -247,6 +251,7 @@
 				234B007B274202A400DB09EA /* LogInVC.swift */,
 				234B007D274202C400DB09EA /* SignUpVC.swift */,
 				234B007F27420A2300DB09EA /* EditProfileVC.swift */,
+				23B83FC12756114B00BC6D95 /* PrivacyInfoVC.swift */,
 			);
 			path = ProfilePage;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				234B0073273FB01E00DB09EA /* UIImageView+Extension.swift */,
 				234B0088274230EE00DB09EA /* VC+Extentsion.swift */,
 				23D4E3A22743B65E00361FA1 /* UIColor+Extension.swift */,
+				239BAA6F2758C4460042BB07 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				234B0089274230EE00DB09EA /* VC+Extentsion.swift in Sources */,
 				230BDC5C2744C501008B5B39 /* WineInfoVC.swift in Sources */,
 				231E6C55273EB08F0055B5A6 /* CameraVC+Extention.swift in Sources */,
+				239BAA702758C4460042BB07 /* UIImage+Extension.swift in Sources */,
 				231E6C48273E800B0055B5A6 /* NewsContentsView.swift in Sources */,
 				231E6C50273E999D0055B5A6 /* HomeContentInfo.swift in Sources */,
 				231E6C1F273E55790055B5A6 /* AppDelegate.swift in Sources */,
@@ -459,6 +466,7 @@
 				234B0087274230C700DB09EA /* SecurityUtils.swift in Sources */,
 				236BF28B274BB13800423A32 /* WineInfoStackView.swift in Sources */,
 				231E6C3A273E57100055B5A6 /* HomeVC.swift in Sources */,
+				23B83FC22756114B00BC6D95 /* PrivacyInfoVC.swift in Sources */,
 				236BF28F274BB1CD00423A32 /* WineInfoSecondView.swift in Sources */,
 				234B007C274202A400DB09EA /* LogInVC.swift in Sources */,
 				230BDC5A2744C4F0008B5B39 /* WineModel.swift in Sources */,

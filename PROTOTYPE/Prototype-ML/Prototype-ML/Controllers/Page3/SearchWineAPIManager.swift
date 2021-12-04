@@ -7,6 +7,53 @@
 
 import Foundation
 
+//MARK: 와인 셀 정보관련
+typealias WineCellImageDict = Dictionary<String, String>    //wine_bottle, country_flag
+    
+struct WineCell: Codable {
+    var id: Int64
+    var name: String
+    var rating: String
+    var price: String
+    var currency: String
+    var country: String
+    var region: String
+    var winery: String
+    var image: WineCellImageDict
+}
+
+struct WineCellList: Codable {
+    var search: [WineCell]
+}
+
+//MARK: 와인 디테일 정보 관련
+typealias WineDetailDict = Dictionary<String, String>
+
+struct WineDetailInfo: Codable {
+    var id: Int64
+    var name: String
+    var name_kr: String
+    var description: String
+}
+
+struct WineDetail: Codable {
+    var id: Int64
+    var name: String
+    var name_kr: String
+    var rating: Double
+    var price: Int64
+    var currency: String
+    var description: String
+    var characters: WineDetailDict
+    var wine_type: WineDetailInfo
+    var country: WineDetailInfo
+    var region: WineDetailInfo
+    var winery: WineDetailInfo
+    var wine_style: WineDetailInfo
+    var grapes: [WineDetailInfo]
+    var images: WineCellImageDict
+}
+
 class SearchWineAPIManager {
     
     private let urlCollections = [
@@ -27,6 +74,6 @@ class SearchWineAPIManager {
             }
         }.resume()
     }
-
-    //+
+    
+  
 }

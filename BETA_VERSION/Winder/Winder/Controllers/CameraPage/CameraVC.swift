@@ -16,6 +16,9 @@ class CameraVC: UIViewController {
     
     var paramWineID: Int64?
     
+    var caputredImage: UIImage?
+    var wineDetail: WineDetail?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
@@ -27,24 +30,65 @@ class CameraVC: UIViewController {
         self.openCamera()
     }
     
+    var preventMultiTouchBtn = false
     @IBAction func didTapPushBtn(_ sender: Any) {
-        //self.alert("사진이 전송되어 분석 중 입니다.", completion: nil)
-        self.spinner.startAnimating()
-        sleep(2)
-        self.spinner.stopAnimating()
-        self.spinner.hidesWhenStopped = true
-        guard let popupResultVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-PopUpToShowResultVC") else { return }
-        popupResultVC.modalPresentationStyle = .overFullScreen
-        self.present(popupResultVC, animated: true, completion: nil)
-        
-        /*
-        // 뷰에 보여지고 있는 데이터 래핑
-        let capturedImageModel = CapturedImageModel(capturedImage: self.CameraImageView.image, paramName: "fieldname", fileName: "capturedUserInput.png")
-        //서버에 푸쉬하고 결과 받아야함
-        MLServiceAPIManager().uploadPictureAndGetResult(capturedImageModel) { str in
-            print(str ?? "nothing yet") //
+        if self.preventMultiTouchBtn == true {
+            return
         }
-         */
+        self.preventMultiTouchBtn = true
+        self.spinner.startAnimating()
+        if let caputredImage = self.caputredImage {
+            WineModel().loadDetailFromAPIByImage(CapturedImageModel(capturedImage: caputredImage, paramName: "fieldname", fileName: "user_input.png")) { wineDetail, error in
+                if let error = error {
+                    print(#function, error.localizedDescription)
+                    DispatchQueue.main.async {
+                        self.spinner.stopAnimating()
+                        self.alert("분석 중 오류가 생겼습니다.", completion: nil)
+                    }
+                }
+                if let wineDetail = wineDetail {
+                    self.wineDetail = wineDetail
+                    print(#function, self.wineDetail)
+                    DispatchQueue.main.async {
+                        self.spinner.stopAnimating()
+                        self.spinner.hidesWhenStopped = true
+                        guard let popupResultVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-PopUpToShowResultVC") as? PopUpToShowResultVC else { return }
+                        self.getImageFromURL((wineDetail.images["wine_bottle"])!, completion: { image in
+                            if let image = image {
+                                popupResultVC.paramWineImage = image
+                                popupResultVC.paramWineryAndTitleLabel = "\(wineDetail.winery.name), \(wineDetail.name)"
+                                popupResultVC.modalPresentationStyle = .overFullScreen
+                                self.present(popupResultVC, animated: true, completion: nil)
+                            } else {
+                                self.spinner.stopAnimating()
+                                self.alert("사진 로드 중 오류가 생겼습니다.", completion: nil)
+                            }
+                        })
+                    }
+                } else {
+                    self.spinner.stopAnimating()
+                    self.alert("분석 중 오류가 생겼습니다.", completion: nil)
+                }
+            }
+        } else {
+            self.spinner.stopAnimating()
+            self.alert("사진을 촬영 해주세요.", completion: nil)
+        }
+        self.preventMultiTouchBtn = false
+    }
+    
+    func getImageFromURL(_ urlStr: String, completion: @escaping (UIImage?) -> ()) {
+        let url = URL(string: urlStr)
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                if let image = UIImage(data: data!) {
+                    completion(image)
+                } else {
+                    print(#function, "parse error")
+                }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,19 +96,16 @@ class CameraVC: UIViewController {
         print(#function)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.CameraImageView.image = UIImage(named: "capture_guideline.png")
+        self.caputredImage = nil
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ID-manual-CameraVC-WineInfoVC" {
             guard let infoVC = segue.destination as? WineInfoVC else { return }
-            //infoVC.modalPresentationStyle = .fullScreen
-            //self.navigationItem.searchController?.isActive = false
-            print(self.paramWineID)
-            WineModel().loadDetailFromAPI(wineID: self.paramWineID ?? 1591326) { wineDetail in
-                if let wineDetail = wineDetail {
-                    infoVC.wineDetail = wineDetail
-                }
-            }
+            infoVC.wineDetail = self.wineDetail
         }
-        //+
     }
     
     //+

@@ -1,28 +1,29 @@
 //
-//  HomeInfoVC.swift
+//  PrivacyInfoVC.swift
 //  Winder
 //
-//  Created by 이동규 on 2021/11/12.
+//  Created by 이동규 on 2021/11/30.
 //
 
 import Foundation
-import UIKit
 import WebKit
+import UIKit
 
-class HomeInfoVC: UIViewController {
-    
+
+class PrivacyInfoVC: UIViewController {
+
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var wkView: WKWebView! {
         didSet {
-            //self.wkView.navigationDelegate = self
+            self.wkView.navigationDelegate = self
             self.wkView.uiDelegate = self
         }
     }
-    var paramContentsID: Int?
+    
     var paramContentsURL: String?
     
     @IBAction func didTapDismissTap(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -39,11 +40,12 @@ class HomeInfoVC: UIViewController {
         let request = URLRequest(url: url!)
         self.wkView.load(request)
     }
+    
+    //+
 }
 
 // MARK: - 웹뷰 델리게이트
-extension HomeInfoVC: WKNavigationDelegate {
-    
+extension PrivacyInfoVC: WKNavigationDelegate {
     // 웹뷰가 컨텐츠 읽기 시작할 때
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         self.spinner.startAnimating()
@@ -58,7 +60,7 @@ extension HomeInfoVC: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         self.spinner.stopAnimating()
         // 이전화면으로 되돌리기 까지 해버리기~
-        self.alert("컨텐츠의 페이지를 읽어오지 못했습니다.") {
+        self.alert("정보 페이지를 읽어오지 못했습니다.") {
             _ = self.navigationController?.popViewController(animated: true)
         }
     }
@@ -67,12 +69,12 @@ extension HomeInfoVC: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         self.spinner.stopAnimating()
         // 이전화면으로 되돌리기 까지 해버리기~
-        self.alert("컨텐츠의 페이지를 읽어오지 못했습니다.") {
+        self.alert("정보 페이지를 읽어오지 못했습니다.") {
             _ = self.navigationController?.popViewController(animated: true)
         }
     }
 }
 
-extension HomeInfoVC: WKUIDelegate {
+extension PrivacyInfoVC: WKUIDelegate {
     
 }

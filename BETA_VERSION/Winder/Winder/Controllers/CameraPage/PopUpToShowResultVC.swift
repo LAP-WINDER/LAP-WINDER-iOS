@@ -15,16 +15,36 @@ class PopUpToShowResultVC: UIViewController {
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var dismissBtn: UIButton!
     
+    @IBOutlet weak var wineImage: UIImageView!
+    @IBOutlet weak var wineryAndTitleLabel: UILabel!
+    
+    var paramWineImage: UIImage?
+//    {
+//        didSet {
+//            if let paramWineImage = self.paramWineImage {
+//                self.wineImage.image = paramWineImage
+//            }
+//        }
+//    }
+    var paramWineryAndTitleLabel: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpPopUpView()
     }
     
     private func setUpPopUpView() {
+        print(#function, "here~")
         self.backgroundView.backgroundColor = .systemGray.withAlphaComponent(0.7)
         self.popupView.layer.cornerRadius = 20
         self.dismissBtn.setTitle("", for: .normal)
         self.dismissBtn.tintColor = UIColor.getWinderColor(.violet)
+        if let paramWineImage = self.paramWineImage {
+            self.wineImage.image = paramWineImage
+        }
+        if let paramWineryAndTitleLabel = self.paramWineryAndTitleLabel {
+            self.wineryAndTitleLabel.text = paramWineryAndTitleLabel
+        }
     }
     
     @IBAction func didTapDismissBtn(_ sender: Any) {
@@ -34,12 +54,11 @@ class PopUpToShowResultVC: UIViewController {
     @IBAction func didTapYesBtn(_ sender: Any) {
         guard let mainTBC = self.presentingViewController as? MainTBC else { return }
         guard let preVC = mainTBC.viewControllers?[2].children[0] as? CameraVC else { return }
-        preVC.paramWineID = 1591326 // 서버통신값으로 바꾸기, 생각해보니 서버통신결과는 cameraVC에..?
         self.dismiss(animated: true) {
             preVC.performSegue(withIdentifier: "ID-manual-CameraVC-WineInfoVC", sender: nil)
         }
     }
-    
+
     @IBAction func didTapNoBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

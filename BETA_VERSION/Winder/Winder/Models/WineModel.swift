@@ -100,5 +100,25 @@ class WineModel {
 		}
 	}
 	
+	// MARK: 이미지 업로드 및 서버API 에서 로딩
+	func loadDetailFromAPIByImage(_ imageModel: CapturedImageModel, completion: @escaping (WineDetail?, Error?) -> ()) {
+		SearchWineAPIManager().uploadPictureAndGetResult(imageModel) { data, error in
+			if let error = error {
+				print(#function, error.localizedDescription)
+				completion(nil, error)
+			} else if let data = data {
+				do {
+					let result = try JSONDecoder().decode(WineDetail.self, from: data)
+					completion(result, nil)
+				} catch {
+					print(error.localizedDescription)
+					completion(nil, error)
+				}
+			} else {
+				completion(nil, nil)
+			}
+		}
+	}
+	
 	//+
 }

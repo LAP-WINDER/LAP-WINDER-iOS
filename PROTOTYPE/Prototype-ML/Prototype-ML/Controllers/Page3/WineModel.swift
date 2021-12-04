@@ -6,26 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
-/*
-"id": 1591326,
-"name": "Tawny Port",
-"rating": "3.8",
-"price": "30000",
-"currency": "won",
-"country": "Portgual",
-"region": "Porto",
-"winery": "Fonseca",
-"image": {
-  "wine_bottle": "https://images.vivino.com/thumbs/DHB93n50RnyjsLMEfprPUQ_pb_x600.png",
-  "country_flag": "https://images-counties-flag.s3.ap-northeast-2.amazonaws.com/png100px/pt.png"
-*/
-    
-typealias WineCellImageDict = Dictionary<String, String>
+//MARK: 와인 셀 정보관련
+typealias WineCellImageDict = Dictionary<String, String>    //wine_bottle, country_flag
     
 struct WineCell: Codable {
     var id: Int64
     var name: String
+    var rating: String
     var price: String
     var currency: String
     var country: String
@@ -34,13 +23,58 @@ struct WineCell: Codable {
     var image: WineCellImageDict
 }
 
+struct WineCellList: Codable {
+    var search: [WineCell]
+}
+
+//MARK: 와인 디테일 정보 관련
+typealias WineDetailDict = Dictionary<String, String>
+
+struct WineDetailInfo: Codable {
+    var id: Int64
+    var name: String
+    var name_kr: String
+    var description: String
+}
+
+struct WineDetail: Codable {
+    var id: Int64
+    var name: String
+    var name_kr: String
+    var rating: Double
+    var price: Int64
+    var currency: String
+    var description: String
+    var characters: WineDetailDict
+    var wine_type: WineDetailInfo
+    var country: WineDetailInfo
+    var region: WineDetailInfo
+    var winery: WineDetailInfo
+    var wine_style: WineDetailInfo
+    var grapes: [WineDetailInfo]
+    var images: WineCellImageDict
+}
+
+//MARK: 와인 정보 뷰모델
 class WineModel {
     
-    var wineCellList = [WineCell]()
-    
     // MARK: 서버API 에서 로딩
-    func loadFromAPI() {
-        SearchWineAPIManager()
+    func loadDetailFromAPI(wineID: Int64, completion: @escaping (WineDetail?) -> ()) {
+        SearchWineAPIManager().loadWineDetail(id: wineID) { data, error in
+            if let error = error {
+                print(#function, error.localizedDescription)
+            } else if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(WineDetail.self, from: data)
+                    completion(result)
+                } catch {
+                    print(error.localizedDescription)
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
+        }
     }
     
     //+

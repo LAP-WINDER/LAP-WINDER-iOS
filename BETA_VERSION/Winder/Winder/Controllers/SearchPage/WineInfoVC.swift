@@ -79,6 +79,7 @@ class WineInfoVC: UIViewController {
         }
         self.wineInfoSecondView.wineryLabel.text = wineDetail?.winery.name
         self.wineInfoNameView.wineTitleNameLabel.text = wineDetail?.name
+        self.wineInfoManufactureView.wineMadeByLabel.text = "\(wineDetail!.country.name), \(wineDetail!.region.name)"
         self.wineInfoRatingPriceView.ratingLabel.text = "\(wineDetail!.rating) ⭐️⭐️⭐️⭐️⭐️"
         self.wineInfoRatingPriceView.priceLabel.text = "\(wineDetail!.price) 🇰🇷"
         self.wineInfoDescriptionView.wineDescriptionLabel.text = self.wineDetail?.description

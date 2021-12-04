@@ -21,7 +21,7 @@ class ProfileTVC: UITableViewController {
         "cell": "ID-ProfileCell"
     ]
     
-    let userArchives: [String] = ["선호하는 와인", "내가 평가한 와인", "위시 리스트"]
+    let userArchives: [String] = ["선호하는 와인", "내가 평가한 와인", "북마크 리스트"]
     let otherInfo: [String] = ["Winder 소개", "서비스 이용약관", "개인정보 취급방침"]
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class ProfileTVC: UITableViewController {
         self.profilebackView.layer.cornerRadius = 20
         self.profilebackView.backgroundColor = UIColor(displayP3Red: 126/255, green: 54/255, blue: 254/255, alpha: 1.0)
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height / 2
-        self.profileImageView.image = UIImage(named: "profile_sample.png")
+        //self.profileImageView.image = UIImage(named: "profile_sample.png")
         self.editProfileBtn.layer.cornerRadius = self.editProfileBtn.frame.height / 2
         self.loginBtn.layer.cornerRadius = self.loginBtn.frame.height / 4
         self.loginBtn.backgroundColor = UIColor(displayP3Red: 1/255, green: 4/255, blue: 48/255, alpha: 1.0)
@@ -82,7 +82,7 @@ class ProfileTVC: UITableViewController {
     private func setProfileInit() {
         self.nicknameLabel.text = "dongklee"
         self.emailLabel.text = "lap.winder@gmail.com"
-        self.profileImageView.image = UIImage(named: "profile_sample.png")
+        //self.profileImageView.image = UIImage(named: "profile_sample.png")
         self.loginBtn.isHidden = false
     }
     
@@ -92,6 +92,11 @@ class ProfileTVC: UITableViewController {
                 loginVC.modalPresentationStyle = .fullScreen
                 self.present(loginVC, animated: true, completion: nil)
             }
+        } else if segue.identifier == "ID-manual-ProfileVC-PrivacyInfoVC" {
+            guard let privacyVC = self.storyboard?.instantiateViewController(withIdentifier: "ID-PrivacyInfoVC") as? PrivacyInfoVC else { return }
+            privacyVC.paramContentsURL = "https://winder.info/terms"
+            //privacyVC.modalPresentationStyle = .fullScreen
+            self.present(privacyVC, animated: true, completion: nil)
         }
     }
     
@@ -135,14 +140,20 @@ extension ProfileTVC {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let _ = SecurityUtils().load(SecurityUtils().bundleName, account: "accessToken") {
-            //할 행동
-            if let cell = tableView.cellForRow(at: indexPath) {
-                print("--->\(cell) \(indexPath.row)")
+        if indexPath.section == 0 {
+            if let _ = SecurityUtils().load(SecurityUtils().bundleName, account: "accessToken") {
+                //할 행동
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    print("--->\(cell) \(indexPath.row)")
+                }
+                tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+                //
+            } else {
+                self.alert("로그인 후 이용해 주세요.", completion: nil)
+                tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
             }
-            //
-        } else {
-            self.alert("로그인 후 이용해 주세요.", completion: nil)
+        } else if indexPath.section == 1 {
+            self.performSegue(withIdentifier: "ID-manual-ProfileVC-PrivacyInfoVC", sender: indexPath)
             tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
         }
     }

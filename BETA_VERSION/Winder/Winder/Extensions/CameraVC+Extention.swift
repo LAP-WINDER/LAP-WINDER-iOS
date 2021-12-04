@@ -57,6 +57,7 @@ extension CameraVC: UIImagePickerControllerDelegate & UINavigationControllerDele
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.CameraImageView.image = image
+            self.caputredImage = image
             dismiss(animated: true, completion: nil)
         }
     }
