@@ -2,21 +2,17 @@
 
 # 🍷 Winder iOS
 
-> Winder 서비스의 iOS 모바일 어플리케이션 파트에 대한 소개 Readme 페이지 입니다.
+> Winder는 'Wine Finder' 라는 단어의 의미로 유저가 원하는, 유저가 알고 싶은 와인을 찾아주고 와인 정보를 제공하는 서비스입니다. 
 
 ![42Seoul](https://img.shields.io/badge/-42Seoul-000000?logo=42&logoColor=white&style=flat&logoWidth=20) ![Swift](https://img.shields.io/badge/-Swift_5-F05138?logo=swift&logoColor=white&style=flat&logoWidth=20) ![Xcode](https://img.shields.io/badge/-Xcode-147EFB?logo=Xcode&logoColor=white&style=flat&logoWidth=20) ![Postman](https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=white&style=flat&logoWidth=20) ![AmazonAws](https://img.shields.io/badge/-Amazon_AWS-232F3E?logo=AmazonAWS&logoColor=white&style=flat&logoWidth=20) ![Kakao](https://img.shields.io/badge/-Kakao_API-FFCD00?logo=Kakao&logoColor=white&style=flat&logoWidth=20) ![Naver](https://img.shields.io/badge/-Naver_API-03C75A?logo=Naver&logoColor=white&style=flat&logoWidth=20)
-
-<br></br>
 
 ## 📺 Demo Video
 
 - [Winder 어플리케이션 시연 영상](https://www.youtube.com/watch?v=aDEy8XW_1tc)
 
-<br></br>
-
 ## 📲 Preview & 🔑 Feature
 
-> Winder 어플리케이션의 페이지와 기능
+> Winder 어플리케이션의 페이지와 기능을 소개합니다.
 
 ### (1) 와인 정보 검색 및 세부 정보 확인
 
@@ -83,17 +79,13 @@
 - 프로필, 로그인 및 회원가입 UI/UX 는 서비스가 필요한 유저 정보가 무엇이 있는지 먼저 팀원들과 논의하고, 도출된 결과에 따라 필요한 항목을 구체화 하였습니다.
 - 자체적인 로그인 시스템을 백엔드 팀원과 함께 구축하였고, 이에 더해 사용자가 간편하게 로그인 하여 서비스를 이용할 수 있도록 카카오와 네이버의 로그인 API를 적용하였습니다.
 
-<br></br>
-
 ## 🏛 Architecture
 
-> iOS 어플리케이션의 구현 구조
+> iOS 어플리케이션의 구현 구조를 소개합니다.
 
 - 폴더 구조
 
 
-
-<br></br>
 
 ## 📟 Call Flows
 
@@ -111,6 +103,6 @@
 
 
 
-<br></br>
+<br>
 
 <p align='center'>🍷🍷🍷</p>
