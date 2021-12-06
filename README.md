@@ -16,9 +16,7 @@
 
 ### (1) 와인 정보 검색 및 세부 정보 확인
 
-<p align='center'>
-  <img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_8_search.png" style="zoom:50%;" /><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_6_wine_info.png" style="zoom:50%;" /><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_7_wine_info_detail.png" style="zoom:50%;" />
-</p>
+<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_8_search.png" img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_6_wine_info.png" img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_7_wine_info_detail.png" style="zoom:50%;" /></p>
 
 - 
 
