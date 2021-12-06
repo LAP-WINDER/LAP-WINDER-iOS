@@ -10,8 +10,6 @@
 
 - [Winder 어플리케이션 시연 영상](https://www.youtube.com/watch?v=aDEy8XW_1tc)
 
-
-
 ## 📲 Preview & 🔑 Feature
 
 > 기능
@@ -52,4 +50,4 @@
 
 - 
 
-<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/winder_logo_and_title.png" style="zoom:10%;" /></p>
+<p align='center'>🍷🍷🍷</p>
