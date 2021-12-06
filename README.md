@@ -52,4 +52,4 @@
 
 - 
 
-<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/winder_logo_and_title.png" style="zoom:50%;" /></p>
+<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/winder_logo_and_title.png" style="zoom:10%;" /></p>
