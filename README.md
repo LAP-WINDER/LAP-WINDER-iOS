@@ -1,10 +1,16 @@
-<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/Winder_iOS_UI:UX.png" style="zoom:50%;" /></p>
-
 # 🍷 Winder iOS
 
 > Winder는 'Wine Finder' 라는 단어의 의미로 유저가 원하는, 유저가 알고 싶은 와인을 찾아주고 와인 정보를 제공하는 서비스입니다. 
 
-![42Seoul](https://img.shields.io/badge/-42Seoul-000000?logo=42&logoColor=white&style=flat&logoWidth=20) ![Swift](https://img.shields.io/badge/-Swift_5-F05138?logo=swift&logoColor=white&style=flat&logoWidth=20) ![Xcode](https://img.shields.io/badge/-Xcode-147EFB?logo=Xcode&logoColor=white&style=flat&logoWidth=20) ![Postman](https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=white&style=flat&logoWidth=20) ![AmazonAws](https://img.shields.io/badge/-Amazon_AWS-232F3E?logo=AmazonAWS&logoColor=white&style=flat&logoWidth=20) ![Kakao](https://img.shields.io/badge/-Kakao_API-FFCD00?logo=Kakao&logoColor=white&style=flat&logoWidth=20) ![Naver](https://img.shields.io/badge/-Naver_API-03C75A?logo=Naver&logoColor=white&style=flat&logoWidth=20)
+<p align="center">
+  <img src="https://img.shields.io/badge/-42Seoul-000000?logo=42&logoColor=white&style=flat&logoWidth=20"/></a>&nbsp
+<img src="https://img.shields.io/badge/-Swift_5-F05138?logo=swift&logoColor=white&style=flat&logoWidth=20"/></a>&nbsp
+<img src="https://img.shields.io/badge/-Xcode-147EFB?logo=Xcode&logoColor=white&style=flat&logoWidth=20"/></a>&nbsp
+<img src="https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=white&style=flat&logoWidth=20"/></a>&nbsp
+<img src="https://img.shields.io/badge/-Amazon_AWS-232F3E?logo=AmazonAWS&logoColor=white&style=flat&logoWidth=20"/></a>&nbsp
+<img src="https://img.shields.io/badge/-Kakao_API-FFCD00?logo=Kakao&logoColor=white&style=flat&logoWidth=20"/></a>&nbsp
+<img src="https://img.shields.io/badge/-Naver_API-03C75A?logo=Naver&logoColor=white&style=flat&logoWidth=20"/></a>&nbsp
+</p>
 
 ## 📺 Demo Video
 
