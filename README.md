@@ -18,6 +18,33 @@
 
 > [Winder 어플리케이션 시연 영상](https://www.youtube.com/watch?v=aDEy8XW_1tc)
 
+## 🏛 Architecture
+
+> iOS 어플리케이션의 구현 구조를 소개합니다.
+
+<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/winder_iOS_architecture.png" /></p>
+
+## 🗃 Folders
+
+```
+🛠 iOS
+├── 📁App
+├── 📁Storyboards
+├── 📁Models
+├── 📁Services
+├── 📁Controllers
+    ├── 📁MainTabBarPage
+    ├── 📁SearchPage
+        ├── 📁InfoStackView
+        └── 📁InfoControllers
+    ├── 📁ProfilePage
+    ├── 📁CameraPage
+    └── 📁HomePage
+├── 📁Extensions
+├── 📁CustomViews
+└── 📁Utils
+```
+
 ## 📲 Preview & 🔑 Feature
 
 > Winder 어플리케이션의 페이지와 기능을 소개합니다.
@@ -87,34 +114,9 @@
 - 프로필, 로그인 및 회원가입 UI/UX 는 서비스가 필요한 유저 정보가 무엇이 있는지 먼저 팀원들과 논의하고, 도출된 결과에 따라 필요한 항목을 구체화 하였습니다.
 - 자체적인 로그인 시스템을 백엔드 팀원과 함께 구축하였고, 이에 더해 사용자가 간편하게 로그인 하여 서비스를 이용할 수 있도록 카카오와 네이버의 로그인 API를 적용하였습니다.
 
-## 🏛 Architecture
-
-> iOS 어플리케이션의 구현 구조를 소개합니다.
-
-<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/winder_iOS_architecture.png" /></p>
-
-## 🗃 Folders
-
-```
-🛠 iOS
-├── 📁App
-├── 📁Storyboards
-├── 📁Models
-├── 📁Services
-├── 📁Controllers
-    ├── 📁MainTabBarPage
-    ├── 📁SearchPage
-        ├── 📁InfoStackView
-        └── 📁InfoControllers
-    ├── 📁ProfilePage
-    ├── 📁CameraPage
-    └── 📁HomePage
-├── 📁Extensions
-├── 📁CustomViews
-└── 📁Utils
-```
-
 ## 📟 Call Flows
+
+> 가장 큰 소통 창구는 Postman
 
 ### (1) 로그인
 
@@ -128,7 +130,11 @@
 
 - 
 
+## Issues
 
+- 코디네이터 패턴 도입
+  - 
+- RxSwift 도입
 
 <br>
 
