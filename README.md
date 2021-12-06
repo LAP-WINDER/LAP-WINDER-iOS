@@ -8,7 +8,7 @@
 
 ## 📺 Demo Video
 
-- [Winder 어플리케이션 시연 영상](https://www.youtube.com/watch?v=aDEy8XW_1tc)
+> [Winder 어플리케이션 시연 영상](https://www.youtube.com/watch?v=aDEy8XW_1tc)
 
 ## 📲 Preview & 🔑 Feature
 
@@ -83,9 +83,28 @@
 
 > iOS 어플리케이션의 구현 구조를 소개합니다.
 
-- 폴더 구조
+<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/winder_iOS_architecture.png" /></p>
 
+## 🗃 Folders
 
+```
+🛠 iOS
+├── 📁App
+├── 📁Storyboards
+├── 📁Models
+├── 📁Services
+├── 📁Controllers
+    ├── 📁MainTabBarPage
+    ├── 📁SearchPage
+        ├── 📁InfoStackView
+        └── 📁InfoControllers
+    ├── 📁ProfilePage
+    ├── 📁CameraPage
+    └── 📁HomePage
+├── 📁Extensions
+├── 📁CustomViews
+└── 📁Utils
+```
 
 ## 📟 Call Flows
 
