@@ -1,3 +1,5 @@
+<p align='center'><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/Winder_iOS_UI:UX.png" style="zoom:50%;" /></p>
+
 # 🍷 Winder iOS
 
 > Winder는 'Wine Finder' 라는 단어의 의미로 유저가 원하는, 유저가 알고 싶은 와인을 찾아주고 와인 정보를 제공하는 서비스입니다. 
