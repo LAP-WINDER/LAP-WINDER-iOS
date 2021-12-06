@@ -24,17 +24,54 @@
         </td> 
         <td style="width: 33%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_6_wine_info.png" style="zoom:50%;" />
         </td> 
-        <td style="width: 33%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_7_wine_info_detail.png" style="zoom:50%;" /></td> 
+        <td style="width: 33%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_7_wine_info_detail.png" style="zoom:50%;" />
+        </td> 
       </tr> 
     </tbody> 
 </table>
 </p>
 
-### (2) 와인 관련 컨텐츠 제공
+- 
+
+### (2) 와인 관련 컨텐츠 제공 및 와인 라벨 인식 기능
+
+<p align='center'>
+  <table style="width: 100%;"> 
+    <tbody> 
+      <tr style="width: 100%;"> 
+        <td style="width: 25%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_8_search.png" style="zoom:50%;" />
+        </td> 
+        <td style="width: 25%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_6_wine_info.png" style="zoom:50%;" />
+        </td> 
+        <td style="width: 25%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_7_wine_info_detail.png" style="zoom:50%;" />
+        </td> 
+        <td style="width: 25%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_7_wine_info_detail.png" style="zoom:50%;" />
+        </td> 
+      </tr> 
+    </tbody> 
+</table>
+</p>
 
 - 
 
-### (3) 와인 라벨 인식 기능 서비스
+### (3) 로그인 및 프로필
+
+<p align='center'>
+  <table style="width: 100%;"> 
+    <tbody> 
+      <tr style="width: 100%;"> 
+        <td style="width: 25%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_8_search.png" style="zoom:50%;" />
+        </td> 
+        <td style="width: 25%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_6_wine_info.png" style="zoom:50%;" />
+        </td> 
+        <td style="width: 25%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_7_wine_info_detail.png" style="zoom:50%;" />
+        </td> 
+        <td style="width: 25%;"><img src="https://github.com/LAP-WINDER/LAP-WINDER-iOS/blob/main/Resources/sc_7_wine_info_detail.png" style="zoom:50%;" />
+        </td> 
+      </tr> 
+    </tbody> 
+</table>
+</p>
 
 - 
 
